@@ -46,14 +46,131 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormsAdministrador\frmAdministracionInventarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="FormsAdministrador\frmAdministracionInventarios.Designer.cs">
+      <DependentUpon>frmAdministracionInventarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmAgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmAgregarEmpleado.Designer.cs">
+      <DependentUpon>frmAgregarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmEditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmEditarEmpleado.Designer.cs">
+      <DependentUpon>frmEditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmEliminarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmEliminarEmpleado.Designer.cs">
+      <DependentUpon>frmEliminarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAdministrador\frmMenuAdmin.Designer.cs">
+      <DependentUpon>frmMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmAcumularPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmAcumularPuntos.Designer.cs">
+      <DependentUpon>frmAcumularPuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBienvenida.Designer.cs">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmCanjearPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmCanjearPuntos.Designer.cs">
+      <DependentUpon>frmCanjearPuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmEditarCliente.Designer.cs">
+      <DependentUpon>frmEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmEliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmEliminarCliente.Designer.cs">
+      <DependentUpon>frmEliminarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmGestionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmGestionarUsuario.Designer.cs">
+      <DependentUpon>frmGestionarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsEmpleado\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsAdministrador\frmAdministracionInventarios.resx">
+      <DependentUpon>frmAdministracionInventarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdministrador\frmAgregarEmpleado.resx">
+      <DependentUpon>frmAgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdministrador\frmEditarEmpleado.resx">
+      <DependentUpon>frmEditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdministrador\frmEliminarEmpleado.resx">
+      <DependentUpon>frmEliminarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAdministrador\frmMenuAdmin.resx">
+      <DependentUpon>frmMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEmpleado\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEmpleado\frmAcumularPuntos.resx">
+      <DependentUpon>frmAcumularPuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBienvenida.resx">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEmpleado\frmEditarCliente.resx">
+      <DependentUpon>frmEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEmpleado\frmEliminarCliente.resx">
+      <DependentUpon>frmEliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEmpleado\frmGestionarUsuario.resx">
+      <DependentUpon>frmGestionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsEmpleado\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,5 +193,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
