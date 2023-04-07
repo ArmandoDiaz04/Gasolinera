@@ -17,3 +17,26 @@ C:\Users\kikii\source\repos\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmAcumul
 C:\Users\kikii\source\repos\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmEditarCliente.resources
 C:\Users\kikii\source\repos\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmEliminarCliente.resources
 C:\Users\kikii\source\repos\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmGestionarUsuario.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\bin\Debug\Gasolinera.exe.config
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\bin\Debug\Gasolinera.exe
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\bin\Debug\Gasolinera.pdb
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.csproj.AssemblyReference.cache
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.csproj.SuggestedBindingRedirects.cache
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.FormsAdministrador.frmAdministracionInventarios.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.FormsAdministrador.frmAgregarEmpleado.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.FormsAdministrador.frmEditarEmpleado.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.FormsAdministrador.frmEliminarEmpleado.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.FormsAdministrador.frmMenuAdmin.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.Form1.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmAcumularPuntos.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmBienvenida.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmEditarCliente.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmEliminarCliente.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmGestionarUsuario.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmLogin.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.frmVenta.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.Properties.Resources.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.csproj.GenerateResource.cache
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.exe
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\Gasolinera\obj\Debug\Gasolinera.pdb

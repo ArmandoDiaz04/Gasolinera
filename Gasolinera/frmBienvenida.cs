@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gasolinera.FormsAdministrador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Gasolinera {
     public partial class frmBienvenida : Form {
         public frmBienvenida() {
             InitializeComponent();
+          
         }
 
 
@@ -28,9 +30,25 @@ namespace Gasolinera {
 
         }
 
-        private void frmBienvenida_Load(object sender, EventArgs e) {
+        private void frmBienvenida_Load(object sender, EventArgs e)
+        {
+
             timer1.Start();
+
+            var screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            var screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            var scaleFactor = Math.Min((double)screenWidth / 1920, (double)screenHeight / 1080);
+            this.Size = new Size((int)(1920 * scaleFactor), (int)(1080 * scaleFactor));
+       
+            this.TopMost = true; // El formulario se muestra siempre en primer plano
+            this.Font = new Font(this.Font.FontFamily, (float)(this.Font.Size * scaleFactor));
+            ///configura la posicion segun tamaño
+            this.Location = new Point((screenWidth - this.Width) / 2, (screenHeight - this.Height) / 2);
+
         }
+
+
+
 
         private void label2_Click(object sender, EventArgs e) {
 
@@ -40,7 +58,10 @@ namespace Gasolinera {
             this.Opacity -= 0.01;
             if (this.Opacity==0) {
                 timer2.Stop();
-                this.Close();
+                this.Hide();
+                new frmMenuAdmin().ShowDialog();
+               
+
             }
         }
     }
