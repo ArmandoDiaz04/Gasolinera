@@ -88,27 +88,15 @@ namespace Gasolinera
             mostrarSubMenus(PanelCRUD);
         }
 
-        #region GestionarClientes  
-        private void btnClientes_Click(object sender, EventArgs e) {
-            abrirFormularios(new frmGestionarUsuario());
-            //dejar hasta abajo por que este cierra los submenu :P
-            ocultarSubMenus();
-        }
-        private void button1_Click_1(object sender, EventArgs e) {
-            abrirFormularios(new frmEditarCliente());
-            //dejar hasta abajo por que este cierra los submenu :P
-            ocultarSubMenus();
-        }
+       
 
         private void button2_Click(object sender, EventArgs e) {
-            abrirFormularios(new frmEliminarCliente());
+            abrirFormularios(new frmGestionarCliente());
             //dejar hasta abajo por que este cierra los submenu :P
             ocultarSubMenus();
         }
 
        
-        #endregion
-
         private Form? formActivo = null;
         private void abrirFormularios(Form formHijo) {
             if (formActivo!=null) 

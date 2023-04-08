@@ -70,16 +70,7 @@ namespace Gasolinera.FormsAdministrador {
             //dejar hasta abajo por que este cierra los submenu :P
             ocultarSubMenus();
         }
-        private void btnEditarEmpleado_Click(object sender, EventArgs e) {
-            abrirFormularios(new frmEditarEmpleado());
-            //dejar hasta abajo por que este cierra los submenu :P
-            ocultarSubMenus();
-        }
-        private void btnEliminarEmpleado_Click(object sender, EventArgs e) {
-            abrirFormularios(new frmEliminarEmpleado());
-            //dejar hasta abajo por que este cierra los submenu :P
-            ocultarSubMenus();
-        }
+   
         //
         private void btnFrecuentes_Click(object sender, EventArgs e) {
             mostrarSubMenus(PanelAdmin);

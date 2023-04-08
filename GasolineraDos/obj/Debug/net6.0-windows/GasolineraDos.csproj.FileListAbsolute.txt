@@ -98,14 +98,9 @@ C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDo
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.csproj.AssemblyReference.cache
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.FormsAdministrador.frmAdministracionInventarios.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.FormsAdministrador.frmAgregarEmpleado.resources
-C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.FormsAdministrador.frmEditarEmpleado.resources
-C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.FormsAdministrador.frmEliminarEmpleado.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.FormsAdministrador.frmMenuAdmin.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.Form1.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmAcumularPuntos.resources
-C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmEditarCliente.resources
-C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmEliminarCliente.resources
-C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmGestionarUsuario.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmVenta.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmBienvenida.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmLogin.resources
@@ -120,3 +115,4 @@ C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDo
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.pdb
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.genruntimeconfig.cache
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\ref\GasolineraDos.dll
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmGestionarCliente.resources

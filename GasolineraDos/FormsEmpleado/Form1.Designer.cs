@@ -120,7 +120,7 @@
             this.button1.Text = "Editar Cliente";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+           
             // 
             // btnClientes
             // 
@@ -138,7 +138,7 @@
             this.btnClientes.Text = "Añadir Cliente";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            
             // 
             // btnGestionar
             // 
