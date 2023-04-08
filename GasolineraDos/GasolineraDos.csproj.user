@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormsAdministrador\frmAdministracionInventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsAdministrador\frmAgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsAdministrador\frmEditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsAdministrador\frmEliminarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsAdministrador\frmMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\frmAcumularPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\frmCanjearPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\frmEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\frmEliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\frmGestionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsEmpleado\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
