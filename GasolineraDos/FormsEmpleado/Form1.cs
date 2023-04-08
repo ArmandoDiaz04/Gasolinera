@@ -101,7 +101,7 @@ namespace Gasolinera
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            abrirFormularios(new frmEliminarCliente());
+            abrirFormularios(new frmGestionarCliente());
             //dejar hasta abajo por que este cierra los submenu :P
             ocultarSubMenus();
         }

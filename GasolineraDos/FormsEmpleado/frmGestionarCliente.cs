@@ -9,9 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gasolinera {
-    public partial class frmEditarCliente : Form {
-        public frmEditarCliente() {
+    public partial class frmGestionarCliente : Form {
+        public frmGestionarCliente() {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
