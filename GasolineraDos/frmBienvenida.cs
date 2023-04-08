@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace Gasolinera {
     public partial class frmBienvenida : Form {
-        public frmBienvenida() {
+        string cargoR;
+        public frmBienvenida(string usuario) {
             InitializeComponent();
+            cargoR = usuario;
         }
 
 
@@ -53,8 +55,16 @@ namespace Gasolinera {
             this.Opacity -= 0.01;
             if (this.Opacity==0) {
                 timer2.Stop();
-                this.Hide();
-                new frmMenuAdmin().ShowDialog();
+                if (cargoR.Equals("Administrador"))
+                {
+                    this.Hide();
+                    new frmMenuAdmin().ShowDialog();
+                }
+                else if (cargoR.Equals("Vendedor"))
+                {
+                    this.Hide();
+                    new Form1().ShowDialog();
+                }            
                 
             }
         }

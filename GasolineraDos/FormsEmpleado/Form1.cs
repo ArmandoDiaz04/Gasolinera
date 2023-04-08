@@ -109,7 +109,7 @@ namespace Gasolinera
        
         #endregion
 
-        private Form formActivo = null;
+        private Form? formActivo = null;
         private void abrirFormularios(Form formHijo) {
             if (formActivo!=null) 
                 formActivo.Close();

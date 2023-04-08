@@ -82,7 +82,6 @@
             this.label2.Size = new System.Drawing.Size(336, 55);
             this.label2.TabIndex = 1;
             this.label2.Text = "____________";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -105,11 +104,10 @@
             this.textBox1.Location = new System.Drawing.Point(407, 92);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Usuario";
             this.textBox1.Size = new System.Drawing.Size(365, 20);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Tag = "USUARIO";
-            this.textBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBox1.Tag = "";
             // 
             // textBox2
             // 
@@ -120,12 +118,11 @@
             this.textBox2.Location = new System.Drawing.Point(407, 163);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.PlaceholderText = "Contraseña";
             this.textBox2.Size = new System.Drawing.Size(365, 20);
             this.textBox2.TabIndex = 4;
-            this.textBox2.Tag = "CONTRASEÑA";
-            this.textBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseClick);
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
+            this.textBox2.Tag = "";
             // 
             // textBox3
             // 
