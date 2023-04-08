@@ -17,12 +17,12 @@ namespace GasolineraDos.Models
         [ForeignKey("Bomba")]
         [Column("ID_BOMBA")]
         public int BombaId { get; set; }
-        public virtual Bomba Bomba { get; set; }
+        public virtual Bomba? Bomba { get; set; }
 
         [ForeignKey("Venta")]
         [Column("ID_VENTA")]
         public int VentaId { get; set; }
-        public virtual Venta Venta { get; set; }
+        public virtual Venta? Venta { get; set; }
 
         [Column("CANTIDAD")]
         public decimal Cantidad { get; set; }

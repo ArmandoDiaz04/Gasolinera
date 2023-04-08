@@ -19,7 +19,7 @@ namespace GasolineraDos.Models
         public string Nombre { get; set; }
 
         [Column("APELLIDO")]
-        public string Apellido { get; set; }
+        public string? Apellido { get; set; }
 
         [Column("DIRECCION")]
         public string Direccion { get; set; }

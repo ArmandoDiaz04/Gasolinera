@@ -25,10 +25,11 @@ namespace GasolineraDos.Models
         public string Cargo { get; set; }
 
         [Column("TELEFONO")]
-        public string Telefono { get; set; }
+        public string? Telefono { get; set; }
 
         [Column("CONTRASENIA")]
         public byte[] Contrasenia { get; set; }
+       
     }
 
 }

@@ -168,10 +168,8 @@
             this.cmboxCargo.AutoCompleteCustomSource.AddRange(new string[] {
             "Administrador",
             "Vendedor"});
+            this.cmboxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxCargo.FormattingEnabled = true;
-            this.cmboxCargo.Items.AddRange(new object[] {
-            "Administrador",
-            "Vendedor"});
             this.cmboxCargo.Location = new System.Drawing.Point(656, 318);
             this.cmboxCargo.Name = "cmboxCargo";
             this.cmboxCargo.Size = new System.Drawing.Size(345, 23);

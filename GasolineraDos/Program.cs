@@ -1,4 +1,5 @@
 using Gasolinera;
+using Gasolinera.FormsAdministrador;
 
 namespace GasolineraDos
 {

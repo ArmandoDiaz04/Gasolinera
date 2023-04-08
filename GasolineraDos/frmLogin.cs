@@ -1,83 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using GasolineraDos.Administrador;
+using GasolineraDos.Conexion;
+using GasolineraDos.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gasolinera {
+namespace Gasolinera
+{
     public partial class frmLogin : Form {
         public frmLogin() {
             InitializeComponent();
-            this.placeHolder(); 
+         
         }
 
-        public void placeHolder() {
-            if (string.IsNullOrEmpty(textBox1.Text))
-            {
-                textBox1.Text = textBox1.Tag.ToString();             
-            }
-            if (string.IsNullOrEmpty(textBox2.Text))
-            {
-                textBox2.Text = textBox2.Tag.ToString();
-            }
-        }
-
-
-        private void label2_Click(object sender, EventArgs e) {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) {
-
-        }
-
+       
         private void textBox3_TextChanged(object sender, EventArgs e) {
 
         }
 
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (textBox1.Text == textBox1.Tag.ToString())
-            {
-                textBox1.Text = "";
-
-            }
-           
-        }
-        private void textBox2_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (textBox2.Text == textBox2.Tag.ToString())
-            {
-                textBox2.Text = "";
-            }
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (textBox1.Text == textBox1.Tag.ToString())
-            {
-                textBox1.Text = "";
-
-            }
-        }
-
-        private void textBox2_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (textBox2.Text == textBox2.Tag.ToString())
-            {
-                textBox2.Text = "";
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new frmBienvenida().ShowDialog();
-         
+            Empleados emp = new Empleados();
+            try
+            {
+                var usuario = textBox1.Text.Trim();
+                var password = textBox2.Text.Trim();
+
+                if (!usuario.IsNullOrEmpty() || !password.IsNullOrEmpty())
+                {
+                    
+                    if (!emp.inicioSesion(usuario, password).IsNullOrEmpty())
+                    {
+                        this.Hide();
+                        new frmBienvenida(emp.inicioSesion(usuario, password)).ShowDialog();
+                    }
+                }
+                else {
+                    MessageBox.Show("Por favor complete los campos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+              
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+          
         }
     }
 }
