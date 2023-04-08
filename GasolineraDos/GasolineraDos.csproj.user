@@ -7,12 +7,6 @@
     <Compile Update="FormsAdministrador\frmAgregarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormsAdministrador\frmEditarEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormsAdministrador\frmEliminarEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FormsAdministrador\frmMenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -25,13 +19,7 @@
     <Compile Update="FormsEmpleado\frmCanjearPuntos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormsEmpleado\frmEditarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormsEmpleado\frmEliminarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormsEmpleado\frmGestionarUsuario.cs">
+    <Compile Update="FormsEmpleado\frmGestionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormsEmpleado\frmVenta.cs">
