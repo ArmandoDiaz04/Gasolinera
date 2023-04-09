@@ -118,7 +118,7 @@
             this.lblGalones.Size = new System.Drawing.Size(84, 24);
             this.lblGalones.TabIndex = 41;
             this.lblGalones.Text = "Nombre:";
-            this.lblGalones.Click += new System.EventHandler(this.lblGalones_Click);
+         
             // 
             // lblPrecio
             // 
@@ -140,7 +140,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(345, 23);
             this.txtNombre.TabIndex = 39;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+          
             // 
             // txtDUI
             // 
@@ -172,7 +172,6 @@
             this.label3.Size = new System.Drawing.Size(66, 24);
             this.label3.TabIndex = 48;
             this.label3.Text = "Cargo:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cmboxCargo
             // 
@@ -199,7 +198,6 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(443, 146);
             this.dataGridView1.TabIndex = 50;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // DUI
             // 
@@ -237,7 +235,6 @@
             this.button2.TabIndex = 51;
             this.button2.Text = "EDITAR  EMPLEADO";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
