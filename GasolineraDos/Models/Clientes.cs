@@ -13,9 +13,9 @@ namespace GasolineraDos.Models
     {
         [Key]
         [Column("ID_CLIENTE")]
-        public int IdCliente { get; set; }
-        [Column("DUI_CLIENTE")]
-        public string duiCLiente { get; set; }
+        public int? IdCliente { get; set; }
+        //[Column("DUI_CLIENTE")]
+        //public string duiCLiente { get; set; }
         [Column("NOMBRE")]
         public string Nombre { get; set; }
 
@@ -23,12 +23,12 @@ namespace GasolineraDos.Models
         public string? Apellido { get; set; }
 
         [Column("DIRECCION")]
-        public string Direccion { get; set; }
+        public string? Direccion { get; set; }
 
         [Column("TELEFONO")]
-        public string Telefono { get; set; }
+        public string? Telefono { get; set; }
 
         [Column("PUNTOS")]
-        public int Puntos { get; set; }
+        public int? Puntos { get; set; }
     }
 }
