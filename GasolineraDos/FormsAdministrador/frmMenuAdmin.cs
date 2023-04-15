@@ -17,10 +17,26 @@ namespace Gasolinera.FormsAdministrador {
         private void btnFactura_Click(object sender, EventArgs e) {
 
         }
+        private void frmMenuAdmin_Shown(object sender, EventArgs e)
+        {
+            // Ajustar tamaño y posición de la ventana
+            var screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            var screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            if (screenWidth < 1920 || screenHeight < 1080)
+            {
+                var scaleFactor = Math.Min((double)screenWidth / 1920, (double)screenHeight / 1080);
+                this.Size = new Size((int)(1920 * scaleFactor), (int)(1080 * scaleFactor));
 
-        private void frmMenuAdmin_Load(object sender, EventArgs e) {
+                this.TopMost = true; // El formulario se muestra siempre en primer plano
+                this.Font = new Font(this.Font.FontFamily, (float)(this.Font.Size * scaleFactor));
+            }
+            this.WindowState = FormWindowState.Maximized; // Hacer pantalla completa
 
+            // Cargar datos en el DataGridView
+            // ...
         }
+
+
         private void personalizarDiseño() {
             panelGesionEmpleado.Visible = false;
             PanelAdmin.Visible = false;
@@ -86,6 +102,24 @@ namespace Gasolinera.FormsAdministrador {
             mostrarSubMenus(PanelReportes);
         }
 
-       
+        private void frmMenuAdmin_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+            var screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            var screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            if (screenWidth < 1920 || screenHeight < 1080)
+            {
+                var scaleFactor = Math.Min((double)screenWidth / 1920, (double)screenHeight / 1080);
+                this.Size = new Size((int)(1920 * scaleFactor), (int)(1080 * scaleFactor));
+
+                this.TopMost = true; // El formulario se muestra siempre en primer plano
+                this.Font = new Font(this.Font.FontFamily, (float)(this.Font.Size * scaleFactor *1.1));
+
+
+            }
+            ///configura la posicion segun tamaño
+            this.Location = new Point((screenWidth - this.Width) / 2, (screenHeight - this.Height) / 2);
+        }
     }
 }

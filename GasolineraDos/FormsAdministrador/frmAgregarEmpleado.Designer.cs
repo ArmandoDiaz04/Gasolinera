@@ -118,7 +118,6 @@
             this.lblGalones.Size = new System.Drawing.Size(84, 24);
             this.lblGalones.TabIndex = 41;
             this.lblGalones.Text = "Nombre:";
-         
             // 
             // lblPrecio
             // 
@@ -140,7 +139,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(345, 23);
             this.txtNombre.TabIndex = 39;
-          
             // 
             // txtDUI
             // 
@@ -154,10 +152,11 @@
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1478, 811);
+            this.dataGridView3.Size = new System.Drawing.Size(1386, 788);
             this.dataGridView3.TabIndex = 37;
             // 
             // label3
@@ -179,6 +178,7 @@
             "Administrador",
             "Vendedor"});
             this.cmboxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxCargo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmboxCargo.FormattingEnabled = true;
             this.cmboxCargo.Location = new System.Drawing.Point(285, 309);
             this.cmboxCargo.Name = "cmboxCargo";
@@ -193,31 +193,37 @@
             this.NOMBRE,
             this.CARGO,
             this.TELEFONO});
-            this.dataGridView1.Location = new System.Drawing.Point(871, 82);
+            this.dataGridView1.Location = new System.Drawing.Point(121, 422);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(939, 146);
             this.dataGridView1.TabIndex = 50;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // DUI
             // 
             this.DUI.HeaderText = "DUI";
             this.DUI.Name = "DUI";
+            this.DUI.ReadOnly = true;
             // 
             // NOMBRE
             // 
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
             // 
             // CARGO
             // 
             this.CARGO.HeaderText = "CARGO";
             this.CARGO.Name = "CARGO";
+            this.CARGO.ReadOnly = true;
             // 
             // TELEFONO
             // 
             this.TELEFONO.HeaderText = "TELEFONO";
             this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
             // 
             // button2
             // 

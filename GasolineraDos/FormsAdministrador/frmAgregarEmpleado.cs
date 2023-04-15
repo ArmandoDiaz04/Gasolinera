@@ -1,4 +1,5 @@
 ﻿using GasolineraDos.Administrador;
+using GasolineraDos.Conexion;
 using GasolineraDos.Models;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -18,6 +19,7 @@ namespace Gasolinera.FormsAdministrador {
             InitializeComponent();
             
             this.llenarCombo();
+            this.llenarTabla();
         }
         private void limpiaCampos() {
             txtContraseña.Text = null;
@@ -65,29 +67,43 @@ namespace Gasolinera.FormsAdministrador {
             cmboxCargo.SelectedIndex = 0;
         }
 
-        private void lblGalones_Click(object sender, EventArgs e)
-        {
+        public void llenarTabla() {
+            dataGridView1.Rows.Clear();
+            List<Empleado> empleados = new();
+            using (var bdEmp = new ContextBd())
+            {
+                empleados = bdEmp.Empleados.ToList();
+            }
+            foreach (var empleado in empleados)
+            {
+                string[] row = new string[] { empleado.Dui.ToString(), empleado.Nombre.ToString()
+                                             , empleado.Cargo.ToString(),empleado.Telefono.ToString()};
+                dataGridView1.Rows.Add(row);
+            }
 
+            //dataGridView1
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var valor = "";
+            if (e.RowIndex >= 0) // Asegurarse de que se haya seleccionado una fila válida
+            {
+                valor = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(); // Obtener el valor de la primera celda de la fila seleccionada
+            }
 
-        }
+            using (var bdEmp = new ContextBd())
+            {
+                var empleados = bdEmp.Empleados.ToList();
+                var empleado = empleados.FirstOrDefault(e => e.Dui.Equals(valor)); // idEmpleado es el id del empleado que desea obtener
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+                txtDUI.Text = empleado.Dui.ToString();
+                txtNombre.Text = empleado.Nombre.ToString();
+                txtTelefono.Text = empleado.Telefono.ToString();
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+             
+                txtContraseña.Text = empleado.Contrasenia.ToString();
+            }
         }
     }
 }
