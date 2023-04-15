@@ -29,18 +29,19 @@ namespace Gasolinera
 
                 if (!usuario.IsNullOrEmpty() || !password.IsNullOrEmpty())
                 {
-                    
+
                     if (!emp.inicioSesion(usuario, password).IsNullOrEmpty())
                     {
                         this.Hide();
                         new frmBienvenida(emp.inicioSesion(usuario, password)).ShowDialog();
                     }
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Por favor complete los campos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-              
+
 
             }
             catch (Exception ex)
@@ -48,7 +49,7 @@ namespace Gasolinera
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-          
+
         }
     }
 }

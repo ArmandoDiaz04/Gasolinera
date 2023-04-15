@@ -22,7 +22,7 @@ namespace GasolineraDos.Models
         public string Nombre { get; set; }
 
         [Column("CARGO")]
-        public string Cargo { get; set; }
+        public string? Cargo { get; set; }
 
         [Column("TELEFONO")]
         public string? Telefono { get; set; }
