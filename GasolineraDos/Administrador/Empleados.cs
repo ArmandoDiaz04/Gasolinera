@@ -27,7 +27,7 @@ namespace GasolineraDos.Administrador
             contexto.SaveChanges();
         }
 
-        public string? inicioSesion(string usuario, string password)
+        public string inicioSesion(string usuario, string password)
         {
             // Obtener el hash de la contraseña ingresada por el usuario
             byte[] contraseniaIngresadaH;
@@ -46,7 +46,7 @@ namespace GasolineraDos.Administrador
                 MessageBox.Show("El usuario o contraseña son erroneos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return resultado ? empleado.Cargo : null;
+            return empleado.Cargo; ;
         }
 
     }

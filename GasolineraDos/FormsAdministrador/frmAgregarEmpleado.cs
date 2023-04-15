@@ -1,18 +1,10 @@
 ﻿using GasolineraDos.Administrador;
 using GasolineraDos.Models;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Gasolinera.FormsAdministrador {
+namespace Gasolinera.FormsAdministrador
+{
     public partial class frmAgregarEmpleado : Form {
         public frmAgregarEmpleado() {
             InitializeComponent();
