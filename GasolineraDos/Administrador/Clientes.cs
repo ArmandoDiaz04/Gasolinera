@@ -40,7 +40,7 @@ namespace GasolineraDos.Administrador
                 var clienteAEliminar = context.Clientes.Find(idCliente);
                 if (clienteAEliminar != null)
                 {
-                    context.Clientes.Remove(clienteAEliminar);
+                    context.Clientes.Remove(clienteAEliminar);                   
                     context.SaveChanges();
                     return true;
                 }
@@ -50,6 +50,24 @@ namespace GasolineraDos.Administrador
                 }
             }
         }
+        //public void ActualizarCliente(int dui,string nombre,string)
+        //{
+           
+        //        // Obtener el objeto correspondiente a la entidad CLIENTE
+        //        var cliente = dbContext.CLIENTE.Find(dui);
 
+        //        // Actualizar las propiedades del objeto recuperado
+        //        cliente.NOMBRE = nombre;
+        //        cliente.APELLIDO = txtApellido.Text;
+        //        cliente.DIRECCION = txtDireccion.Text;
+        //        cliente.TELEFONO = txtTelefono.Text;
+        //        cliente.PUNTOS = int.Parse(txtPuntos.Text);
+
+        //        // Guardar los cambios en la base de datos
+        //        contexto.SaveChanges();
+           
+
+           
+        //}
     }
 }

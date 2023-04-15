@@ -133,5 +133,15 @@ namespace Gasolinera {
             }
             
         }
+
+        
+
+        private void txtDUI_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.Show("Ingrese su numero de DUI sin guiones.", txtDUI, 0, -25, 5000);
+
+
+        }
     }
 }

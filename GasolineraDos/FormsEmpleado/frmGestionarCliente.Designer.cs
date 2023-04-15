@@ -140,12 +140,12 @@
             // 
             // txtDUI
             // 
-            this.txtDUI.Enabled = false;
             this.txtDUI.Location = new System.Drawing.Point(127, 97);
             this.txtDUI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDUI.Name = "txtDUI";
             this.txtDUI.Size = new System.Drawing.Size(345, 23);
             this.txtDUI.TabIndex = 28;
+            this.txtDUI.MouseHover += new System.EventHandler(this.txtDUI_MouseHover);
             // 
             // dataGridView3
             // 
