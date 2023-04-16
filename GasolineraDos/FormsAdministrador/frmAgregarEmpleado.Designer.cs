@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.label2 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,10 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmboxCargo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DUI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CARGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -59,13 +55,13 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Contraseña:";
             // 
-            // txtContraseña
+            // txtContrasenia
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(285, 244);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(345, 23);
-            this.txtContraseña.TabIndex = 45;
+            this.txtContrasenia.Location = new System.Drawing.Point(285, 244);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(345, 23);
+            this.txtContrasenia.TabIndex = 45;
             // 
             // label1
             // 
@@ -97,7 +93,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Thistle;
-            this.button1.Location = new System.Drawing.Point(740, 293);
+            this.button1.Location = new System.Drawing.Point(676, 234);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 50);
@@ -118,7 +114,6 @@
             this.lblGalones.Size = new System.Drawing.Size(84, 24);
             this.lblGalones.TabIndex = 41;
             this.lblGalones.Text = "Nombre:";
-         
             // 
             // lblPrecio
             // 
@@ -140,7 +135,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(345, 23);
             this.txtNombre.TabIndex = 39;
-          
             // 
             // txtDUI
             // 
@@ -157,7 +151,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1478, 811);
+            this.dataGridView3.Size = new System.Drawing.Size(1388, 687);
             this.dataGridView3.TabIndex = 37;
             // 
             // label3
@@ -188,36 +182,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DUI,
-            this.NOMBRE,
-            this.CARGO,
-            this.TELEFONO});
-            this.dataGridView1.Location = new System.Drawing.Point(871, 82);
+            this.dataGridView1.Location = new System.Drawing.Point(78, 388);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(787, 186);
             this.dataGridView1.TabIndex = 50;
-            // 
-            // DUI
-            // 
-            this.DUI.HeaderText = "DUI";
-            this.DUI.Name = "DUI";
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // CARGO
-            // 
-            this.CARGO.HeaderText = "CARGO";
-            this.CARGO.Name = "CARGO";
-            // 
-            // TELEFONO
-            // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.Name = "TELEFONO";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // button2
             // 
@@ -228,13 +199,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Thistle;
-            this.button2.Location = new System.Drawing.Point(937, 293);
+            this.button2.Location = new System.Drawing.Point(676, 164);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(189, 50);
             this.button2.TabIndex = 51;
             this.button2.Text = "EDITAR  EMPLEADO";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -245,26 +217,27 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Thistle;
-            this.button3.Location = new System.Drawing.Point(1134, 293);
+            this.button3.Location = new System.Drawing.Point(676, 95);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(189, 50);
             this.button3.TabIndex = 52;
             this.button3.Text = "ELIMINAR  EMPLEADO";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmAgregarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1386, 647);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmboxCargo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.button1);
@@ -287,7 +260,7 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button button1;
@@ -299,10 +272,6 @@
         private Label label3;
         private ComboBox cmboxCargo;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn DUI;
-        private DataGridViewTextBoxColumn NOMBRE;
-        private DataGridViewTextBoxColumn CARGO;
-        private DataGridViewTextBoxColumn TELEFONO;
         private Button button2;
         private Button button3;
     }

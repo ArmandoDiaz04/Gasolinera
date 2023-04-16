@@ -48,7 +48,40 @@ namespace GasolineraDos.Administrador
 
             return empleado.Cargo; ;
         }
-
+        public bool EliminarEmpleado(int dui)
+        {
+            using (var context = new ContextBd())
+            {
+                var eliminar = context.Empleados.Find(dui);
+                if (eliminar != null)
+                {
+                    context.Empleados.Remove(eliminar);
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public void EditarEmpleado(int id, string nuevoNombre, string nuevoCargo)
+        {
+            using (var context = new ContextBd())
+            {
+                var empleado = context.Empleados.Find(id);
+                if (empleado != null)
+                {
+                    empleado.Nombre = nuevoNombre;
+                    empleado.Cargo = nuevoCargo;
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new ArgumentException("El empleado no existe en la base de datos.");
+                }
+            }
+        }
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using GasolineraDos.Administrador;
+using GasolineraDos.Conexion;
 using GasolineraDos.Models;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -14,13 +15,15 @@ using System.Windows.Forms;
 
 namespace Gasolinera.FormsAdministrador {
     public partial class frmAgregarEmpleado : Form {
+
+        private int idep;
         public frmAgregarEmpleado() {
             InitializeComponent();
-            
+            llenarDataGridView(dataGridView1);
             this.llenarCombo();
         }
         private void limpiaCampos() {
-            txtContraseña.Text = null;
+            txtContrasenia.Text = null;
             txtDUI.Text = null;
             txtNombre.Text = null;
             txtTelefono.Text = null;
@@ -35,9 +38,9 @@ namespace Gasolinera.FormsAdministrador {
 
             using (var sha512 = SHA512.Create())
             {
-                contraseniaHash = sha512.ComputeHash(Encoding.UTF8.GetBytes(txtContraseña.Text.Trim()));
+                contraseniaHash = sha512.ComputeHash(Encoding.UTF8.GetBytes(txtContrasenia.Text.Trim()));
             }
-            if (!cmboxCargo.Text.Trim().Equals("---Seleccione una opción--") || txtDUI.Text.Trim().IsNullOrEmpty() || txtContraseña.Text.IsNullOrEmpty())
+            if (!cmboxCargo.Text.Trim().Equals("---Seleccione una opción--") || txtDUI.Text.Trim().IsNullOrEmpty() || txtContrasenia.Text.IsNullOrEmpty())
             {
                 Empleado nuevoEmpleado = new Empleado
                 {
@@ -50,6 +53,7 @@ namespace Gasolinera.FormsAdministrador {
 
                 emp.CrearEmpleado(nuevoEmpleado);
                 this.limpiaCampos();
+                llenarDataGridView(dataGridView1);
             }
             else {
                 MessageBox.Show("Por favor complete los campos", "Error al crear empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -58,6 +62,15 @@ namespace Gasolinera.FormsAdministrador {
            
             this.llenarCombo();
         }
+        public void llenarDataGridView(DataGridView dataGridView)
+        {
+            // dataGridView1.Rows.Clear(); 
+            using (var contexto = new ContextBd())
+            {
+                List<Empleado> emp = contexto.Empleados.ToList();
+                dataGridView.DataSource = emp;
+            }
+        }
 
         public void llenarCombo() {
             string[] elementos = { "---Seleccione una opción--", "Administrador", "Vendedor" };
@@ -65,29 +78,69 @@ namespace Gasolinera.FormsAdministrador {
             cmboxCargo.SelectedIndex = 0;
         }
 
-        private void lblGalones_Click(object sender, EventArgs e)
-        {
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
+                    idep =(int) fila.Cells["IDEMPLEADO"].Value;
+                    txtDUI.Text = fila.Cells["DUI"].Value.ToString();
+                    txtNombre.Text = fila.Cells["NOMBRE"].Value.ToString();
+                    txtContrasenia.Text = fila.Cells["CONTRASENIA"].Value.ToString();
+                    txtTelefono.Text = fila.Cells["TELEFONO"].Value.ToString();
+                    cmboxCargo.Text = fila.Cells["CARGO"].Value.ToString();
+                }
+
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show("Error:"+er, "Error al eliminar empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine(er.Message);
+            }
+           
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-
+            if (e.Exception is ArgumentException)
+            {
+                // Mostrar mensaje de error personalizado
+                //MessageBox.Show("Error al cargar la imagen: " + e.Exception.Message);
+                //e.ThrowException = false;
+            }
+           
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
+            Empleados cli = new Empleados();
 
-        }
+            if (idep != null)
+            {
+               
+                DialogResult result = MessageBox.Show($"¿Está seguro que desea eliminar a {txtNombre.Text} ({txtNombre.Text})?", "Eliminar empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+                if (result == DialogResult.Yes)
+                {
+                    cli.EliminarEmpleado(idep);
+                    llenarDataGridView(dataGridView1);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un empleado", "Error al eliminar empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Empleados cli = new Empleados();
+            cli.EditarEmpleado(idep, txtNombre.Text, cmboxCargo.Text);
+            llenarDataGridView(dataGridView1);
+            
         }
     }
 }
