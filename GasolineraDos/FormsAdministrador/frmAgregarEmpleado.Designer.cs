@@ -148,10 +148,15 @@
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView3.Name = "dataGridView3";
+<<<<<<< HEAD
             this.dataGridView3.Size = new System.Drawing.Size(1388, 687);
+=======
+            this.dataGridView3.Size = new System.Drawing.Size(1386, 788);
+>>>>>>> 7ca17b12161befd5d9c1effb2000e7aea2c708a2
             this.dataGridView3.TabIndex = 37;
             // 
             // label3
@@ -173,6 +178,7 @@
             "Administrador",
             "Vendedor"});
             this.cmboxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxCargo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmboxCargo.FormattingEnabled = true;
             this.cmboxCargo.Location = new System.Drawing.Point(285, 309);
             this.cmboxCargo.Name = "cmboxCargo";
@@ -182,13 +188,53 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(78, 388);
+=======
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DUI,
+            this.NOMBRE,
+            this.CARGO,
+            this.TELEFONO});
+            this.dataGridView1.Location = new System.Drawing.Point(121, 422);
+>>>>>>> 7ca17b12161befd5d9c1effb2000e7aea2c708a2
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
+<<<<<<< HEAD
             this.dataGridView1.Size = new System.Drawing.Size(787, 186);
             this.dataGridView1.TabIndex = 50;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+=======
+            this.dataGridView1.Size = new System.Drawing.Size(939, 146);
+            this.dataGridView1.TabIndex = 50;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // DUI
+            // 
+            this.DUI.HeaderText = "DUI";
+            this.DUI.Name = "DUI";
+            this.DUI.ReadOnly = true;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            // 
+            // CARGO
+            // 
+            this.CARGO.HeaderText = "CARGO";
+            this.CARGO.Name = "CARGO";
+            this.CARGO.ReadOnly = true;
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "TELEFONO";
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+>>>>>>> 7ca17b12161befd5d9c1effb2000e7aea2c708a2
             // 
             // button2
             // 
@@ -260,7 +306,11 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtContrasenia;
+=======
+        private System.Windows.Forms.TextBox txtContraseña;
+>>>>>>> 7ca17b12161befd5d9c1effb2000e7aea2c708a2
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button button1;

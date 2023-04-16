@@ -21,6 +21,7 @@ namespace Gasolinera.FormsAdministrador {
             InitializeComponent();
             llenarDataGridView(dataGridView1);
             this.llenarCombo();
+            this.llenarTabla();
         }
         private void limpiaCampos() {
             txtContrasenia.Text = null;

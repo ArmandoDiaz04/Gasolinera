@@ -40,7 +40,6 @@ namespace Gasolinera
                     MessageBox.Show("Por favor complete los campos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-              
 
             }
             catch (Exception ex)
