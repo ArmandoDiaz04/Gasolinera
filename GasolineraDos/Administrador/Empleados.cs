@@ -139,7 +139,7 @@ namespace GasolineraDos.Administrador
 
             return textoDesencriptado;
         }
-        public void EditarEmpleado(int id, string nuevoNombre, string nuevoCargo)
+        public void EditarEmpleado(int id, string nuevoNombre, string nuevoCargo, byte[] contraseniaCifrada,string telefono,string dui)
         {
             using (var context = new ContextBd())
             {
@@ -148,6 +148,9 @@ namespace GasolineraDos.Administrador
                 {
                     empleado.Nombre = nuevoNombre;
                     empleado.Cargo = nuevoCargo;
+                    empleado.Telefono = telefono;
+                    empleado.Dui = dui;
+                    empleado.Contrasenia = contraseniaCifrada;
                     context.SaveChanges();
                 }
                 else

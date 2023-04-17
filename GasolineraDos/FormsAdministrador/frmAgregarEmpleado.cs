@@ -35,7 +35,7 @@ namespace Gasolinera.FormsAdministrador
             Empleados emp = new Empleados();
          // Clave secreta para el cifrado
 
-            if (!cmboxCargo.Text.Trim().Equals("---Seleccione una opción--") || txtDUI.Text.Trim().IsNullOrEmpty() || txtContrasenia.Text.IsNullOrEmpty())
+            if (!cmboxCargo.Text.Trim().Equals("---Seleccione una opción--") || txtDUI.Text.Trim() !="" || txtNombre.Text.Trim() != "" || txtTelefono.Text.Trim() != "" || !txtContrasenia.Text.IsNullOrEmpty() )
             {
 
                 // Cifrar la contraseña
@@ -163,8 +163,13 @@ namespace Gasolinera.FormsAdministrador
 
         private void button2_Click(object sender, EventArgs e)
         {
+            byte[] contraseniaCifrada = Empleados.Encriptar(txtContrasenia.Text.Trim());
+
             Empleados cli = new Empleados();
-            cli.EditarEmpleado(idep, txtNombre.Text, cmboxCargo.Text);
+            
+
+
+            cli.EditarEmpleado(idep, txtNombre.Text, cmboxCargo.Text, contraseniaCifrada,txtTelefono.Text,txtDUI.Text);
             llenarDataGridView(dataGridView1);
             
         }
@@ -225,10 +230,17 @@ namespace Gasolinera.FormsAdministrador
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
-            if (txtDUI.Text.Length == 4)
+            if (txtTelefono.Text.Length == 4)
             {
-                txtDUI.Text += "-";
-                txtDUI.SelectionStart = txtDUI.Text.Length;
+                txtTelefono.Text += "-";
+                txtTelefono.SelectionStart = txtTelefono.Text.Length;
+            }
+            else if (txtTelefono.Text.Length > 9)
+            {
+                txtTelefono.Text = txtTelefono.Text.Substring(0, 9);
+                txtTelefono.SelectionStart = txtTelefono.Text.Length;
+
+
             }
         }
     }
