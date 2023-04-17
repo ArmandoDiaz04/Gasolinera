@@ -1,4 +1,7 @@
 ﻿using Gasolinera.FormsAdministrador;
+using GasolineraDos;
+using GasolineraDos.Administrador;
+using GasolineraDos.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +15,12 @@ using System.Windows.Forms;
 namespace Gasolinera {
     public partial class frmBienvenida : Form {
         string cargoR;
+       
+
         public frmBienvenida(string usuario) {
             InitializeComponent();
             cargoR = usuario;
+            username.Text = user.Default.nombre;
         }
 
 

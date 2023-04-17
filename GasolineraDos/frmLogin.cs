@@ -32,6 +32,7 @@ namespace Gasolinera
                     
                     if (!emp.inicioSesion(usuario, password).IsNullOrEmpty())
                     {
+                      
                         this.Hide();
                         new frmBienvenida(emp.inicioSesion(usuario, password)).ShowDialog();
                     }

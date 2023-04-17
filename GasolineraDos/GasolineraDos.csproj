@@ -13,4 +13,19 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.2.23128.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="user.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>user.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="user.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>user.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>

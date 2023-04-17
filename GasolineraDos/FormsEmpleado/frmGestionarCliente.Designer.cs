@@ -102,6 +102,7 @@
             this.button1.TabIndex = 32;
             this.button1.Text = "AGREGAR CLIENTE";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblGalones
             // 
@@ -225,7 +226,7 @@
             this.button3.Text = "ELIMINAR CLIENTE";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // frmEliminarCliente
+            // frmGestionarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,7 +246,7 @@
             this.Controls.Add(this.dataGridView3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "frmEliminarCliente";
+            this.Name = "frmGestionarCliente";
             this.Text = "frmEliminarCliente";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
