@@ -9,7 +9,6 @@ namespace GasolineraDos.Administrador
     {
      
         private ContextBd contexto;
-        
 
         public Empleados()
         {
@@ -32,7 +31,7 @@ namespace GasolineraDos.Administrador
             if (empleado != null && empleado.Contrasenia != null)
             {
                 // Encriptar la contraseña ingresada en texto con la misma clave y vector de inicialización que se utilizó para encriptar la contraseña almacenada en la base de datos
-                byte[] passwordEncriptada = Encriptar(usuario, passwordEnTexto, empleado.Cargo);
+                byte[] passwordEncriptada = Encriptar( passwordEnTexto);
 
                 // Comparar los bytes de ambas contraseñas encriptadas para ver si son iguales
                 resultado = empleado.Contrasenia.SequenceEqual(passwordEncriptada);
@@ -70,15 +69,22 @@ namespace GasolineraDos.Administrador
                 }
             
         }
-        public static byte[] Encriptar(string seguridad,string cadena,string cargo)
+        public static byte[] Encriptar( string cadena)
         {
+            string clave = "2b7e151628aed2a6abf7158809cf4f3c";
+            string iv = "000102030405060708090a0b0c0d0e0f";
+            byte[] ivBytes = Enumerable.Range(0, iv.Length)
+                           .Where(x => x % 2 == 0)
+                           .Select(x => Convert.ToByte(iv.Substring(x, 2), 16))
+                           .ToArray();
+
             byte[] textoPlano = Encoding.UTF8.GetBytes(cadena);         
             byte[] textoCifrado;
 
             using (Aes aesAlg = Aes.Create())
             {
-                aesAlg.Key = Encoding.UTF8.GetBytes(seguridad);
-                aesAlg.IV = Encoding.UTF8.GetBytes(cargo);
+                aesAlg.Key = Encoding.UTF8.GetBytes(clave);
+                aesAlg.IV = ivBytes;
                 aesAlg.Padding = PaddingMode.PKCS7;
                 aesAlg.Mode = CipherMode.CBC;
 
@@ -98,14 +104,22 @@ namespace GasolineraDos.Administrador
             return textoCifrado;
         }
 
-        public static string Desencriptar(string seguridad,byte[] textoCifrado, string cargo)
+        public static string Desencriptar(byte[] textoCifrado)
         {
             string textoDesencriptado;
+            string clave = "2b7e151628aed2a6abf7158809cf4f3c";
+            string iv = "000102030405060708090a0b0c0d0e0f";
+
+            byte[] ivBytes = Enumerable.Range(0, iv.Length)
+                           .Where(x => x % 2 == 0)
+                           .Select(x => Convert.ToByte(iv.Substring(x, 2), 16))
+                           .ToArray();
+
 
             using (Aes aesAlg = Aes.Create())
             {
-                aesAlg.Key = Encoding.UTF8.GetBytes(seguridad);
-                aesAlg.IV = Encoding.UTF8.GetBytes(cargo); 
+                aesAlg.Key = Encoding.UTF8.GetBytes(clave);
+                aesAlg.IV = ivBytes;
                 aesAlg.Padding = PaddingMode.PKCS7;
                 aesAlg.Mode = CipherMode.CBC;
 

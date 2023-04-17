@@ -11,14 +11,16 @@ namespace Gasolinera.FormsAdministrador
       
         private int idep;
         private ContextBd contexto;
-        public Empleados()
-        {
-            this.contexto = new ContextBd();
-        }
+      
         public frmAgregarEmpleado() {
             InitializeComponent();
             llenarDataGridView(dataGridView1);
             this.llenarCombo();
+            this.contexto = new ContextBd();
+            this.button2.Enabled = false;
+            this.button3.Enabled =false;
+
+
 
         }
         private void limpiaCampos() {
@@ -37,7 +39,8 @@ namespace Gasolinera.FormsAdministrador
             {
 
                 // Cifrar la contraseña
-                byte[] contraseniaCifrada = Empleados.Encriptar(txtDUI.Text.Trim(), txtContrasenia.Text.Trim(), user.Default.cargo);
+                //byte[] contraseniaCifrada = Empleados.Encriptar(txtDUI.Text.Trim(), txtContrasenia.Text.Trim(), user.Default.cargo);
+                byte[] contraseniaCifrada = Empleados.Encriptar( txtContrasenia.Text.Trim());
 
                 Empleado nuevoEmpleado = new Empleado
                 {
@@ -92,10 +95,30 @@ namespace Gasolinera.FormsAdministrador
                     txtTelefono.Text = fila.Cells["TELEFONO"].Value.ToString();
                     cmboxCargo.Text = fila.Cells["CARGO"].Value.ToString();                   
                 }
-                Empleado empleado = contexto.Empleados.SingleOrDefault(e => e.Dui.Equals(txtDUI.Text.Trim()));
-                string contrasenia = Empleados.Desencriptar(empleado.Dui,empleado.Contrasenia,user.Default.cargo);
-                MessageBox.Show(contrasenia);
 
+
+
+                Empleado empleado = contexto.Empleados.SingleOrDefault(e => e.Dui.Equals(txtDUI.Text.Trim()));
+
+                if (empleado != null)
+                {
+                    string contrasenia = Empleados.Desencriptar(empleado.Contrasenia);
+                    MessageBox.Show(contrasenia);
+                    this.button2.Enabled = true;
+                    this.button3.Enabled = true;
+                    this.button1.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún empleado con ese DUI.");
+                }
+
+
+                //string contrasenia = Empleados.Desencriptar(empleado.Contrasenia);
+                //MessageBox.Show(contrasenia);
+                //this.button2.Enabled = true;
+                //this.button3.Enabled = true;
+                //this.button1.Enabled = false;
 
             }
             catch (Exception er)
@@ -144,6 +167,69 @@ namespace Gasolinera.FormsAdministrador
             cli.EditarEmpleado(idep, txtNombre.Text, cmboxCargo.Text);
             llenarDataGridView(dataGridView1);
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.button1.Enabled = true;
+            this.button2.Enabled = false;
+            this.button3.Enabled = false;
+
+            //idep = 0;
+            txtDUI.Text = "";
+            txtNombre.Text ="";
+            txtContrasenia.Text ="";
+            txtTelefono.Text ="";
+            cmboxCargo.SelectedIndex =0;
+
+        }
+
+        private void txtDUI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDUI_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.IsBalloon = true;
+            toolTip1.SetToolTip(txtDUI, "Ingrese su numero de DUI sin guion.");
+        }
+
+        private void txtDUI_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDUI.Text.Length == 8)
+            {
+                txtDUI.Text += "-";
+                txtDUI.SelectionStart = txtDUI.Text.Length;
+            }
+            else if (txtDUI.Text.Length > 10)
+            {
+                txtDUI.Text = txtDUI.Text.Substring(0, 9);
+                txtDUI.SelectionStart = txtDUI.Text.Length;
+
+
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDUI.Text.Length == 4)
+            {
+                txtDUI.Text += "-";
+                txtDUI.SelectionStart = txtDUI.Text.Length;
+            }
         }
     }
 }
