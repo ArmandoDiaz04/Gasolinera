@@ -2,6 +2,7 @@
 using GasolineraDos.Conexion;
 using GasolineraDos.Models;
 using Microsoft.IdentityModel.Tokens;
+using GasolineraDos;
 
 namespace Gasolinera.FormsAdministrador
 {
@@ -9,6 +10,11 @@ namespace Gasolinera.FormsAdministrador
 
       
         private int idep;
+        private ContextBd contexto;
+        public Empleados()
+        {
+            this.contexto = new ContextBd();
+        }
         public frmAgregarEmpleado() {
             InitializeComponent();
             llenarDataGridView(dataGridView1);
@@ -29,9 +35,9 @@ namespace Gasolinera.FormsAdministrador
 
             if (!cmboxCargo.Text.Trim().Equals("---Seleccione una opción--") || txtDUI.Text.Trim().IsNullOrEmpty() || txtContrasenia.Text.IsNullOrEmpty())
             {
-         
+
                 // Cifrar la contraseña
-                //byte[] contraseniaCifrada = emp.Encriptar(txtDUI.Text.Trim(), txtContrasenia.Text.Trim(),);
+                byte[] contraseniaCifrada = Empleados.Encriptar(txtDUI.Text.Trim(), txtContrasenia.Text.Trim(), user.Default.cargo);
 
                 Empleado nuevoEmpleado = new Empleado
                 {
@@ -39,7 +45,7 @@ namespace Gasolinera.FormsAdministrador
                     Nombre = txtNombre.Text.Trim(),
                     Telefono = txtTelefono.Text.Trim(),
                     Cargo = cmboxCargo.Text.Trim(),
-                   // Contrasenia = contraseniaCifrada // Guardar la contraseña cifrada
+                    Contrasenia = contraseniaCifrada 
                 };
 
                 emp.CrearEmpleado(nuevoEmpleado);
@@ -75,6 +81,7 @@ namespace Gasolinera.FormsAdministrador
         {
             try
             {
+
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
@@ -83,11 +90,15 @@ namespace Gasolinera.FormsAdministrador
                     txtNombre.Text = fila.Cells["NOMBRE"].Value.ToString();
                     txtContrasenia.Text = fila.Cells["CONTRASENIA"].Value.ToString();
                     txtTelefono.Text = fila.Cells["TELEFONO"].Value.ToString();
-                    cmboxCargo.Text = fila.Cells["CARGO"].Value.ToString();
+                    cmboxCargo.Text = fila.Cells["CARGO"].Value.ToString();                   
                 }
+                Empleado empleado = contexto.Empleados.SingleOrDefault(e => e.Dui.Equals(txtDUI.Text.Trim()));
+                string contrasenia = Empleados.Desencriptar(empleado.Dui,empleado.Contrasenia,user.Default.cargo);
+                MessageBox.Show(contrasenia);
+
 
             }
-            catch(Exception er)
+            catch (Exception er)
             {
                 MessageBox.Show("Error:"+er, "Error al eliminar empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine(er.Message);

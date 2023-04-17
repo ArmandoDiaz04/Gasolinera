@@ -22,25 +22,27 @@ namespace GasolineraDos.Administrador
             contexto.SaveChanges();
         }
 
-        public string? inicioSesion(string usuario, string password)
+        public string? inicioSesion(string usuario, string passwordEnTexto)
         {
-            // Obtener el hash de la contraseña ingresada por el usuario
-            byte[] contraseniaIngresadaH;
-            using (var sha512 = SHA512.Create())
-            {
-                contraseniaIngresadaH = sha512.ComputeHash(Encoding.UTF8.GetBytes(password));
-            }
-
             // Obtener el empleado correspondiente al usuario que intenta iniciar sesión
             Empleado empleado = contexto.Empleados.SingleOrDefault(e => e.Dui.Equals(usuario));
 
-            bool resultado = empleado != null && empleado.Contrasenia != null && empleado.Contrasenia.SequenceEqual(contraseniaIngresadaH) && empleado.Dui.Equals(usuario);
+            bool resultado = false;
+
+            if (empleado != null && empleado.Contrasenia != null)
+            {
+                // Encriptar la contraseña ingresada en texto con la misma clave y vector de inicialización que se utilizó para encriptar la contraseña almacenada en la base de datos
+                byte[] passwordEncriptada = Encriptar(usuario, passwordEnTexto, empleado.Cargo);
+
+                // Comparar los bytes de ambas contraseñas encriptadas para ver si son iguales
+                resultado = empleado.Contrasenia.SequenceEqual(passwordEncriptada);
+            }
 
             if (!resultado)
             {
-                MessageBox.Show("El usuario o contraseña son erroneos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             
+                MessageBox.Show("El usuario o contraseña son erróneos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             if (resultado)
             {
                 // Guardar la información del empleado logueado en la clase Properties               
@@ -51,23 +53,22 @@ namespace GasolineraDos.Administrador
 
             return resultado ? empleado.Cargo : null;
         }
-       
+
         public bool EliminarEmpleado(int dui)
         {
-            using (var context = new ContextBd())
-            {
-                var eliminar = context.Empleados.Find(dui);
+          
+                var eliminar = contexto.Empleados.Find(dui);
                 if (eliminar != null)
                 {
-                    context.Empleados.Remove(eliminar);
-                    context.SaveChanges();
+                contexto.Empleados.Remove(eliminar);
+                contexto.SaveChanges();
                     return true;
                 }
                 else
                 {
                     return false;
                 }
-            }
+            
         }
         public static byte[] Encriptar(string seguridad,string cadena,string cargo)
         {

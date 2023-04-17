@@ -14,12 +14,11 @@ using System.Windows.Forms;
 
 namespace Gasolinera {
     public partial class frmBienvenida : Form {
-        string cargoR;
-       
+         
 
-        public frmBienvenida(string usuario) {
+        public frmBienvenida() {
             InitializeComponent();
-            cargoR = usuario;
+          
             username.Text = user.Default.nombre;
         }
 
@@ -65,12 +64,12 @@ namespace Gasolinera {
             this.Opacity -= 0.01;
             if (this.Opacity==0) {
                 timer2.Stop();
-                if (cargoR.Equals("Administrador"))
+                if (user.Default.cargo.Equals("Administrador"))
                 {
                     this.Hide();
                     new frmMenuAdmin().ShowDialog();
                 }
-                else if (cargoR.Equals("Vendedor"))
+                else if (user.Default.cargo.Equals("Vendedor"))
                 {
                     this.Hide();
                     new Form1().ShowDialog();
