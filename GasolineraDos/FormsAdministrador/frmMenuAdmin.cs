@@ -36,6 +36,7 @@ namespace Gasolinera.FormsAdministrador {
             ///configura la posicion segun tamaño
             this.Location = new Point((screenWidth - this.Width) / 2, (screenHeight - this.Height) / 2);
         }
+
         private void personalizarDiseño() {
             panelGesionEmpleado.Visible = false;
             PanelAdmin.Visible = false;
@@ -101,6 +102,5 @@ namespace Gasolinera.FormsAdministrador {
             mostrarSubMenus(PanelReportes);
         }
 
-       
     }
 }

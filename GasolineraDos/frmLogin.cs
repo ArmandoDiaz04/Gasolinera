@@ -21,6 +21,7 @@ namespace Gasolinera
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             Empleados emp = new Empleados();
             try
             {
@@ -32,8 +33,9 @@ namespace Gasolinera
 
                     if (!emp.inicioSesion(usuario, password).IsNullOrEmpty())
                     {
+                      
                         this.Hide();
-                        new frmBienvenida(emp.inicioSesion(usuario, password)).ShowDialog();
+                        new frmBienvenida().ShowDialog();
                     }
                 }
                 else
@@ -49,6 +51,18 @@ namespace Gasolinera
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+        }
+
+      
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Realizar acción al presionar Enter
+                this.button1_Click(sender, e);
+            }
 
         }
     }

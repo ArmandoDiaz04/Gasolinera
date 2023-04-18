@@ -1,4 +1,7 @@
 ﻿using Gasolinera.FormsAdministrador;
+using GasolineraDos;
+using GasolineraDos.Administrador;
+using GasolineraDos.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +14,12 @@ using System.Windows.Forms;
 
 namespace Gasolinera {
     public partial class frmBienvenida : Form {
-        string cargoR;
-        public frmBienvenida(string usuario) {
+         
+
+        public frmBienvenida() {
             InitializeComponent();
-            cargoR = usuario;
+          
+            username.Text = user.Default.nombre;
         }
 
 
@@ -34,7 +39,9 @@ namespace Gasolinera {
 
             var screenWidth = Screen.PrimaryScreen.Bounds.Width;
             var screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
             if (screenWidth < 1920 || screenHeight < 1080)
+
             {
                 var scaleFactor = Math.Min((double)screenWidth / 1920, (double)screenHeight / 1080);
                 this.Size = new Size((int)(1920 * scaleFactor), (int)(1080 * scaleFactor));
@@ -62,12 +69,12 @@ namespace Gasolinera {
             this.Opacity -= 0.01;
             if (this.Opacity==0) {
                 timer2.Stop();
-                if (cargoR.Equals("Administrador"))
+                if (user.Default.cargo.Equals("Administrador"))
                 {
                     this.Hide();
                     new frmMenuAdmin().ShowDialog();
                 }
-                else if (cargoR.Equals("Vendedor"))
+                else if (user.Default.cargo.Equals("Vendedor"))
                 {
                     this.Hide();
                     new Form1().ShowDialog();

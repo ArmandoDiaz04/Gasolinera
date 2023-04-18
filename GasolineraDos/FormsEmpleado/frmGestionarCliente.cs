@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using GasolineraDos.Models;
+﻿using GasolineraDos.Models;
 using GasolineraDos.Conexion;
 using GasolineraDos.Administrador;
 
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
-
-namespace Gasolinera {
+namespace Gasolinera
+{
     public partial class frmGestionarCliente : Form {
         public frmGestionarCliente() {
             InitializeComponent();
@@ -22,36 +12,27 @@ namespace Gasolinera {
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\data\gasolinera.mdf; Integrated Security = True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            // Crear el contexto de base de datos
+            using (var db = new ContextBd())
             {
-                // Abrir la conexión
-                connection.Open();
+                // Obtener el cliente correspondiente al ID
+                var cliente = db.Clientes.FirstOrDefault(c => c.IdCliente == int.Parse(txtDUI.Text));
 
-                // Crear el comando SQL para actualizar los datos de la fila seleccionada
-                string sql = "UPDATE CLIENTE SET  NOMBRE = @nombre, APELLIDO = @apellido, DIRECCION = @direccion, TELEFONO = @telefono, PUNTOS = @puntos WHERE ID_CLIENTE = @id";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    // Agregar los parámetros al comando SQL
-                    command.Parameters.AddWithValue("@id", txtDUI.Text);  
-                    command.Parameters.AddWithValue("@nombre", txtNombre.Text);
-                    command.Parameters.AddWithValue("@apellido", txtApellido.Text);
-                    command.Parameters.AddWithValue("@direccion", txtDireccion.Text);
-                    command.Parameters.AddWithValue("@telefono", txtTelefono.Text);
-                    command.Parameters.AddWithValue("@puntos", txtPuntos.Text);
+                // Actualizar las propiedades del cliente
+                cliente.Nombre = txtNombre.Text;
+                cliente.Apellido = txtApellido.Text;
+                cliente.Direccion = txtDireccion.Text;
+                cliente.Telefono = txtTelefono.Text;
+                cliente.Puntos = int.Parse(txtPuntos.Text);
 
-                    // Ejecutar el comando SQL
-                    command.ExecuteNonQuery();
-                }
-
-                // Cerrar la conexión
-                connection.Close();
+                // Guardar los cambios en la base de datos
+                db.SaveChanges();
             }
 
             // Actualizar el DataGridView con los datos modificados
             llenarDataGridView(dataGridView1);
-
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -143,5 +124,7 @@ namespace Gasolinera {
 
 
         }
+
+        
     }
 }
