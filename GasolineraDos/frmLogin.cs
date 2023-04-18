@@ -65,5 +65,11 @@ namespace Gasolinera
             }
 
         }
+
+        private void linkLabel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Por favor pongase en contacto con un administrador.", "Cambio de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
