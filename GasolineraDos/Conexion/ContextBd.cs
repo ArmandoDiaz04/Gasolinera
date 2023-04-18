@@ -19,8 +19,15 @@ namespace GasolineraDos.Conexion
         private static DbContextOptions GetOptions()
         {
             var builder = new DbContextOptionsBuilder<ContextBd>();
+<<<<<<< HEAD
             builder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
 
+=======
+            //JUAN
+            //builder.UseSqlServer(@"Data Source=(LocalDB)\MiInstanciaLocalDB;AttachDbFilename=C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
+            //KRISSIA
+            builder.UseSqlServer(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =C:\Users\kikii\source\repos\Gasolinera\GasolineraDos\data\gasolinera.mdf; Integrated Security = True");
+>>>>>>> fae8805332543be0fcab789d01e6f6e52d703034
             return builder.Options;
         }
         public DbSet<Clientes> Clientes { get; set; }
