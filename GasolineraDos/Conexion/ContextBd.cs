@@ -19,7 +19,7 @@ namespace GasolineraDos.Conexion
         private static DbContextOptions GetOptions()
         {
             var builder = new DbContextOptionsBuilder<ContextBd>();
-            builder.UseSqlServer(@"Data Source=(LocalDB)\MiInstanciaLocalDB;AttachDbFilename=C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
+            builder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
 
             return builder.Options;
         }
