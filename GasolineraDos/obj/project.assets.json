@@ -3153,24 +3153,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Juan\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\kikii\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Juan\\Documents\\Mis archivos\\Metodologias_Agiles\\Gasolinera\\GasolineraDos\\GasolineraDos.csproj",
+      "projectUniqueName": "C:\\Users\\kikii\\source\\repos\\Gasolinera\\GasolineraDos\\GasolineraDos.csproj",
       "projectName": "GasolineraDos",
-      "projectPath": "C:\\Users\\Juan\\Documents\\Mis archivos\\Metodologias_Agiles\\Gasolinera\\GasolineraDos\\GasolineraDos.csproj",
-      "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Juan\\Documents\\Mis archivos\\Metodologias_Agiles\\Gasolinera\\GasolineraDos\\obj\\",
+      "projectPath": "C:\\Users\\kikii\\source\\repos\\Gasolinera\\GasolineraDos\\GasolineraDos.csproj",
+      "packagesPath": "C:\\Users\\kikii\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kikii\\source\\repos\\Gasolinera\\GasolineraDos\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\kikii\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3178,7 +3173,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/AppsAndesTeam/_packaging/framework%40Local/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
