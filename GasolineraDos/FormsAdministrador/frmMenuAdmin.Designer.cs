@@ -91,14 +91,33 @@
             // 
             // PanelReportes
             // 
+<<<<<<< Updated upstream
+=======
+            this.panelClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
+            this.panelClientes.Controls.Add(this.button1);
+            this.panelClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelClientes.Location = new System.Drawing.Point(0, 591);
+            this.panelClientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelClientes.Name = "panelClientes";
+            this.panelClientes.Size = new System.Drawing.Size(304, 66);
+            this.panelClientes.TabIndex = 9;
+
+>>>>>>> Stashed changes
             this.PanelReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
             this.PanelReportes.Controls.Add(this.button1);
             this.PanelReportes.Controls.Add(this.btnrep1);
             this.PanelReportes.Dock = System.Windows.Forms.DockStyle.Top;
+<<<<<<< Updated upstream
             this.PanelReportes.Location = new System.Drawing.Point(0, 630);
             this.PanelReportes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelReportes.Name = "PanelReportes";
             this.PanelReportes.Size = new System.Drawing.Size(287, 186);
+=======
+            this.PanelReportes.Location = new System.Drawing.Point(0, 471);
+            this.PanelReportes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PanelReportes.Name = "PanelReportes";
+            this.PanelReportes.Size = new System.Drawing.Size(304, 94);
+>>>>>>> Stashed changes
             this.PanelReportes.TabIndex = 7;
             // 
             // button1
@@ -113,7 +132,14 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
+<<<<<<< Updated upstream
             this.button1.Size = new System.Drawing.Size(287, 46);
+=======
+            this.button1.Size = new System.Drawing.Size(304, 46);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Gestionar Clientes";
+
+>>>>>>> Stashed changes
             this.button1.TabIndex = 1;
             this.button1.Text = "r2";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +170,13 @@
             this.btnGenerarReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReportes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGenerarReportes.ForeColor = System.Drawing.Color.Gainsboro;
+<<<<<<< Updated upstream
             this.btnGenerarReportes.Location = new System.Drawing.Point(0, 583);
+=======
+            this.btnGenerarReportes.Location = new System.Drawing.Point(0, 431);
+
+            this.btnGenerarReportes.Location = new System.Drawing.Point(0, 424);
+>>>>>>> Stashed changes
             this.btnGenerarReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarReportes.Name = "btnGenerarReportes";
             this.btnGenerarReportes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -159,11 +191,24 @@
             // 
             this.PanelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
             this.PanelAdmin.Controls.Add(this.btnCargarBombas);
+<<<<<<< Updated upstream
             this.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelAdmin.Location = new System.Drawing.Point(0, 507);
             this.PanelAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelAdmin.Name = "PanelAdmin";
             this.PanelAdmin.Size = new System.Drawing.Size(287, 76);
+=======
+            this.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelAdmin.Location = new System.Drawing.Point(0, 355);
+            this.PanelAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PanelAdmin.Name = "PanelAdmin";
+            this.PanelAdmin.Size = new System.Drawing.Size(304, 76);
+
+            this.PanelAdmin.Location = new System.Drawing.Point(0, 364);
+            this.PanelAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PanelAdmin.Name = "PanelAdmin";
+            this.PanelAdmin.Size = new System.Drawing.Size(304, 60);
+>>>>>>> Stashed changes
             this.PanelAdmin.TabIndex = 5;
             // 
             // btnCargarBombas
@@ -191,8 +236,15 @@
             this.btnAdminInventarios.FlatAppearance.BorderSize = 0;
             this.btnAdminInventarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminInventarios.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+<<<<<<< Updated upstream
             this.btnAdminInventarios.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAdminInventarios.Location = new System.Drawing.Point(0, 460);
+=======
+            this.btnAdminInventarios.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdminInventarios.Location = new System.Drawing.Point(0, 308);
+            this.btnAdminInventarios.Location = new System.Drawing.Point(0, 317);
+
+>>>>>>> Stashed changes
             this.btnAdminInventarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdminInventarios.Name = "btnAdminInventarios";
             this.btnAdminInventarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -211,7 +263,13 @@
             this.panelGesionEmpleado.Location = new System.Drawing.Point(0, 252);
             this.panelGesionEmpleado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelGesionEmpleado.Name = "panelGesionEmpleado";
+<<<<<<< Updated upstream
             this.panelGesionEmpleado.Size = new System.Drawing.Size(287, 208);
+=======
+            this.panelGesionEmpleado.Size = new System.Drawing.Size(304, 56);
+
+            this.panelGesionEmpleado.Size = new System.Drawing.Size(304, 65);
+>>>>>>> Stashed changes
             this.panelGesionEmpleado.TabIndex = 3;
             // 
             // btnAñadirEmpleado
@@ -293,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
+<<<<<<< Updated upstream
         }
 
         #endregion
@@ -313,4 +372,31 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
+=======
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelSideMenu;
+        private System.Windows.Forms.Panel PanelReportes;
+        private System.Windows.Forms.Button btnrep1;
+        private System.Windows.Forms.Button btnGenerarReportes;
+        private System.Windows.Forms.Panel PanelAdmin;
+        private System.Windows.Forms.Button btnCargarBombas;
+        private System.Windows.Forms.Button btnAdminInventarios;
+        private System.Windows.Forms.Panel panelGesionEmpleado;
+        private System.Windows.Forms.Button btnAñadirEmpleado;
+        private System.Windows.Forms.Button btnGestionarEmpleados;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Panel panelClientes;
+        private Button button1;
+        private Button btnGestionar;
+    }
+
+        
+>>>>>>> Stashed changes
 }
