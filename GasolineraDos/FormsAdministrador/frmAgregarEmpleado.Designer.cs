@@ -187,6 +187,7 @@
             this.cmboxCargo.Name = "cmboxCargo";
             this.cmboxCargo.Size = new System.Drawing.Size(345, 23);
             this.cmboxCargo.TabIndex = 49;
+            this.cmboxCargo.SelectedIndexChanged += new System.EventHandler(this.cmboxCargo_SelectedIndexChanged);
             // 
             // dataGridView1
             // 

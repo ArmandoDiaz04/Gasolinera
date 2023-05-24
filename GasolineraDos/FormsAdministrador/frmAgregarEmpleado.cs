@@ -242,5 +242,10 @@ namespace Gasolinera.FormsAdministrador
 
             }
         }
+
+        private void cmboxCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
