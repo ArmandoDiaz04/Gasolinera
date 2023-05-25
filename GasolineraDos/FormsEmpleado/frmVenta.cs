@@ -46,55 +46,75 @@ namespace Gasolinera {
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Ventas ven = new Ventas();
-            string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
-            int idep = int.Parse(emple);
-
-            double calcu = double.Parse(txtPrecio.Text) ;
-            double pre = calcu * 3.24;                                  
-            double tt = pre*1.13;
-
-            Venta venta = new Venta
+            try
             {
+                int bomba = 0;
+                double pGaso = 0;
+
+                if (this.comboBox1.Text.Trim() == "SUPER")
+                {
+                    bomba = 1;
+                    pGaso = 4.42;
+                }
+                else if (this.comboBox1.Text.Trim() == "REGULAR")
+                {
+                    bomba = 2; pGaso = 4.13;
+                }
+                else if (this.comboBox1.Text.Trim() == "DIESEL")
+                {
+                    bomba = 3;
+                    pGaso = 3.65;
+                }
+                else if (this.comboBox1.Text.Trim() == "---Seleccione una opción--")
+                {
+                    MessageBox.Show("Seleccione un tipo de gasolina");
+                    return;
+                }
+
+                Ventas ven = new Ventas();
+                string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
+                int idep = int.Parse(emple);
+
                 
-                IdEmpleado = idep,
-                IdCliente = 1,
-                Precio =pre ,
-                ImpuestoF = 2.0,
-                IVA = 0.13,
-                Total = 13.5
-            };
+
+                double calcu = double.Parse(txtPrecio.Text);
+                double pre = calcu * pGaso;
+                double tt = pre * 1.13;
+
+                Venta venta = new Venta
+                {
+
+                    IdEmpleado = idep,
+                    IdCliente = 1,
+                    Precio = pre,
+                    ImpuestoF = 2.0,
+                    IVA = 0.13,
+                    Total = tt
+                };
 
 
-        // detalle insert 
-        DetalleVentas detalleVentas = new DetalleVentas(); 
-            
-            int bomba =0;
+                // detalle insert 
+                DetalleVentas detalleVentas = new DetalleVentas();
 
-            if (this.comboBox1.Text.Trim() == "SUPER")
-            {   
-                bomba = 1;
+                
 
-            }else if (this.comboBox1.Text.Trim() == "REGULAR")
-            {
-                bomba=2;
-            }else if (this.comboBox1.Text.Trim() == "DIESEL")
-            {
-                bomba = 3;
+
+                DetalleVenta dv = new DetalleVenta
+                {
+                    ID_BOMBA = bomba,
+                    Cantidad = calcu,
+                    Descuento = 0,
+                    Precio = tt
+
+                };
+
+                ven.CrearVenta(venta, dv);
+
             }
-
-
-            DetalleVenta dv = new DetalleVenta
+            catch (Exception E)
             {
-                ID_BOMBA = bomba,
-                Cantidad = calcu,
-                Descuento = 0,
-                Precio = tt
-
-            };
-
-            ven.CrearVenta(venta,dv);
-
+                MessageBox.Show(E.Message);
+            }
 
 
         }
@@ -162,6 +182,90 @@ namespace Gasolinera {
         private void lblGalones_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonDollar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int bomba = 0;
+                double pGaso = 0;
+
+                if (this.comboBox1.Text.Trim() == "SUPER")
+                {
+                    bomba = 1;
+                    pGaso = 4.42;
+                }
+                else if (this.comboBox1.Text.Trim() == "REGULAR")
+                {
+                    bomba = 2; pGaso = 4.13;
+                }
+                else if (this.comboBox1.Text.Trim() == "DIESEL")
+                {
+                    bomba = 3;
+                    pGaso = 3.65;
+                }
+                else if (this.comboBox1.Text.Trim() == "---Seleccione una opción--")
+                {
+                    MessageBox.Show("Seleccione un tipo de gasolina");
+                    return;
+                }
+                Ventas ven = new Ventas();
+                string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
+                int idep = int.Parse(emple);
+
+
+               
+                double calcu = double.Parse(txtPrecio.Text);
+                double gal = calcu -(calcu*0.13) / pGaso;
+
+                Venta venta = new Venta
+                {
+
+                    IdEmpleado = idep,
+                    IdCliente = 1,
+                    Precio = calcu,
+                    ImpuestoF = 2.0,
+                    IVA = 0.13,
+                    Total = gal
+                };
+
+
+                // detalle insert 
+                DetalleVentas detalleVentas = new DetalleVentas();
+
+                
+
+
+                    DetalleVenta dv = new DetalleVenta
+                {
+                    ID_BOMBA = bomba,
+                    Cantidad = calcu,
+                    Descuento = 0,
+                    Precio = gal
+
+                };
+
+                ven.CrearVenta(venta, dv);
+
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message);
+            }
+
+
+
+
+
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

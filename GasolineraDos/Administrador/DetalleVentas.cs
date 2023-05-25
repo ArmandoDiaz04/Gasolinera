@@ -18,11 +18,11 @@ namespace GasolineraDos.Administrador
             this.contexto = new ContextBd();
         }
 
-        public void CrearVenta(DetalleVenta venta)
-        {
-            contexto.DetallesVentas.Add(venta);
-            contexto.SaveChanges();
-        }
+        //public void CrearVenta(DetalleVenta venta)
+        //{
+        //    contexto.DetallesVentas.Add(venta);
+        //    contexto.SaveChanges();
+        //}
         //public void InsertarDetalleVenta(int idBomba, int idVenta, double cantidad, double descuento, double precio)
         //{
         //    string insertSql = "INSERT INTO DETALLE_VENTA (ID_BOMBA, ID_VENTA, CANTIDAD, DESCUENTO, PRECIO) " +

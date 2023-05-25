@@ -58,16 +58,17 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(1019, 51);
+            this.txtPrecio.Location = new System.Drawing.Point(264, 134);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(345, 23);
             this.txtPrecio.TabIndex = 1;
             this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtGalones
             // 
-            this.txtGalones.Location = new System.Drawing.Point(264, 135);
+            this.txtGalones.Location = new System.Drawing.Point(876, 51);
             this.txtGalones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtGalones.Name = "txtGalones";
             this.txtGalones.Size = new System.Drawing.Size(345, 23);
@@ -225,7 +226,7 @@
             // 
             // buttongalon
             // 
-            this.buttongalon.Location = new System.Drawing.Point(79, 396);
+            this.buttongalon.Location = new System.Drawing.Point(73, 405);
             this.buttongalon.Name = "buttongalon";
             this.buttongalon.Size = new System.Drawing.Size(75, 23);
             this.buttongalon.TabIndex = 28;
@@ -241,6 +242,7 @@
             this.buttonDollar.TabIndex = 29;
             this.buttonDollar.Text = "DOLLARES";
             this.buttonDollar.UseVisualStyleBackColor = true;
+            this.buttonDollar.Click += new System.EventHandler(this.buttonDollar_Click);
             // 
             // frmVenta
             // 
