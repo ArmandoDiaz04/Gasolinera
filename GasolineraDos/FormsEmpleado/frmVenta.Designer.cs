@@ -42,6 +42,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.buttongalon = new System.Windows.Forms.Button();
             this.buttonDollar = new System.Windows.Forms.Button();
+            this.btnPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,11 +245,22 @@
             this.buttonDollar.UseVisualStyleBackColor = true;
             this.buttonDollar.Click += new System.EventHandler(this.buttonDollar_Click);
             // 
+            // btnPDF
+            // 
+            this.btnPDF.Location = new System.Drawing.Point(73, 460);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(169, 23);
+            this.btnPDF.TabIndex = 31;
+            this.btnPDF.Text = "CrearFactura";
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.button11_Click_1);
+            // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 811);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.buttonDollar);
             this.Controls.Add(this.buttongalon);
             this.Controls.Add(this.button10);
@@ -301,5 +313,6 @@
         private Button button10;
         private Button buttongalon;
         private Button buttonDollar;
+        private Button btnPDF;
     }
 }

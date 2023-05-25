@@ -29,11 +29,12 @@ namespace GasolineraDos.Administrador
                 detalleVenta.VentaId = venta.IdVenta;
                 detalleVenta.Venta = venta;
 
-                MessageBox.Show("ff" + venta.IdVenta);
+               
 
                 // Insertar el detalleVenta y guardar los cambios
                 contexto.DetallesVenta.Add(detalleVenta);
                 contexto.SaveChanges();
+                MessageBox.Show("Venta Exitosa!!");
 
             }
         }
