@@ -30,7 +30,7 @@ namespace GasolineraDos.Conexion
         public DbSet<Gasolina> Gasolinas { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Bomba> Bombas { get; set; }
-        public DbSet<DetalleVenta> DetallesVentas { get; set; }
+        public DbSet<DetalleVenta> DetallesVenta { get; set; }
         public DbSet<Transaccion> Transacciones { get; set; }
 
     }

@@ -67,7 +67,7 @@
             // 
             // txtGalones
             // 
-            this.txtGalones.Location = new System.Drawing.Point(331, 179);
+            this.txtGalones.Location = new System.Drawing.Point(264, 135);
             this.txtGalones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtGalones.Name = "txtGalones";
             this.txtGalones.Size = new System.Drawing.Size(345, 23);
@@ -79,7 +79,7 @@
             this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPrecio.ForeColor = System.Drawing.Color.Thistle;
-            this.lblPrecio.Location = new System.Drawing.Point(79, 77);
+            this.lblPrecio.Location = new System.Drawing.Point(79, 119);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(69, 24);
@@ -93,17 +93,18 @@
             this.lblGalones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.lblGalones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblGalones.ForeColor = System.Drawing.Color.Thistle;
-            this.lblGalones.Location = new System.Drawing.Point(79, 175);
+            this.lblGalones.Location = new System.Drawing.Point(79, 153);
             this.lblGalones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGalones.Name = "lblGalones";
             this.lblGalones.Size = new System.Drawing.Size(85, 24);
             this.lblGalones.TabIndex = 4;
             this.lblGalones.Text = "Galones:";
+            this.lblGalones.Click += new System.EventHandler(this.lblGalones_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(331, 276);
+            this.comboBox1.Location = new System.Drawing.Point(264, 51);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(345, 23);
@@ -115,7 +116,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Thistle;
-            this.label1.Location = new System.Drawing.Point(79, 270);
+            this.label1.Location = new System.Drawing.Point(79, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 24);
@@ -124,7 +125,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1019, 225);
+            this.button1.Location = new System.Drawing.Point(79, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -134,7 +135,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1157, 225);
+            this.button2.Location = new System.Drawing.Point(203, 343);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
@@ -144,7 +145,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1289, 225);
+            this.button3.Location = new System.Drawing.Point(328, 343);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 12;
@@ -154,7 +155,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1019, 178);
+            this.button4.Location = new System.Drawing.Point(79, 294);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -164,7 +165,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1157, 179);
+            this.button5.Location = new System.Drawing.Point(203, 294);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 16;
@@ -174,7 +175,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1289, 179);
+            this.button6.Location = new System.Drawing.Point(328, 294);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 18;
@@ -184,7 +185,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1019, 122);
+            this.button7.Location = new System.Drawing.Point(79, 237);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 20;
@@ -194,7 +195,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(1157, 122);
+            this.button8.Location = new System.Drawing.Point(203, 237);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 22;
@@ -204,7 +205,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(1289, 122);
+            this.button9.Location = new System.Drawing.Point(328, 237);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 24;
@@ -214,7 +215,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(1157, 270);
+            this.button10.Location = new System.Drawing.Point(203, 405);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 26;
@@ -224,7 +225,7 @@
             // 
             // buttongalon
             // 
-            this.buttongalon.Location = new System.Drawing.Point(1019, 270);
+            this.buttongalon.Location = new System.Drawing.Point(79, 396);
             this.buttongalon.Name = "buttongalon";
             this.buttongalon.Size = new System.Drawing.Size(75, 23);
             this.buttongalon.TabIndex = 28;
@@ -234,7 +235,7 @@
             // 
             // buttonDollar
             // 
-            this.buttonDollar.Location = new System.Drawing.Point(1289, 270);
+            this.buttonDollar.Location = new System.Drawing.Point(328, 405);
             this.buttonDollar.Name = "buttonDollar";
             this.buttonDollar.Size = new System.Drawing.Size(75, 23);
             this.buttonDollar.TabIndex = 29;

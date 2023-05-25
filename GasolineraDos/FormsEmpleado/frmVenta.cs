@@ -1,5 +1,7 @@
 ﻿using GasolineraDos.Administrador;
+using GasolineraDos.Conexion;
 using GasolineraDos.Models;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +15,14 @@ using System.Windows.Forms;
 namespace Gasolinera {
     public partial class frmVenta : Form {
         private TextBox textField;
+        private ContextBd contexto;
         public frmVenta() {
             InitializeComponent();
             llenarCombo();
         }
         public void llenarCombo()
         {
-            string[] elementos = { "---Seleccione una opción--", "SUPER", "REGULAR","Diesel" };
+            string[] elementos = { "---Seleccione una opción--", "SUPER", "REGULAR","DIESEL" };
             this.comboBox1.Items.AddRange(elementos);
             comboBox1.SelectedIndex = 0;
         }
@@ -45,22 +48,54 @@ namespace Gasolinera {
         {
             Ventas ven = new Ventas();
             string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
-            
-             
             int idep = int.Parse(emple);
+
+            double calcu = double.Parse(txtPrecio.Text) ;
+            double pre = calcu * 3.24;                                  
+            double tt = pre*1.13;
 
             Venta venta = new Venta
             {
                 
                 IdEmpleado = idep,
                 IdCliente = 1,
-                Precio = 10.0,
+                Precio =pre ,
                 ImpuestoF = 2.0,
-                IVA = 1.5,
+                IVA = 0.13,
                 Total = 13.5
             };
 
-            ven.CrearVenta(venta);
+
+        // detalle insert 
+        DetalleVentas detalleVentas = new DetalleVentas(); 
+            
+            int bomba =0;
+
+            if (this.comboBox1.Text.Trim() == "SUPER")
+            {   
+                bomba = 1;
+
+            }else if (this.comboBox1.Text.Trim() == "REGULAR")
+            {
+                bomba=2;
+            }else if (this.comboBox1.Text.Trim() == "DIESEL")
+            {
+                bomba = 3;
+            }
+
+
+            DetalleVenta dv = new DetalleVenta
+            {
+                ID_BOMBA = bomba,
+                Cantidad = calcu,
+                Descuento = 0,
+                Precio = tt
+
+            };
+
+            ven.CrearVenta(venta,dv);
+
+
 
         }
 
@@ -120,6 +155,11 @@ namespace Gasolinera {
         }
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGalones_Click(object sender, EventArgs e)
         {
 
         }

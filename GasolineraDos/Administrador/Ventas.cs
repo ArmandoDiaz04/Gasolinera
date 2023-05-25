@@ -17,11 +17,23 @@ namespace GasolineraDos.Administrador
             this.contexto = new ContextBd();
         }
 
-        public void CrearVenta(Venta venta)
+        public void CrearVenta(Venta venta, DetalleVenta detalleVenta)
         {
-            contexto.Ventas.Add(venta);
-            contexto.SaveChanges();
-        }
+
+            using (var contexto = new ContextBd()) // Reemplaza "TuContexto" con el nombre de tu clase de contexto de Entity Framework
+            {
+                contexto.Ventas.Add(venta);
+                contexto.SaveChanges();
+
+                // Asignar la venta al detalleVenta
+                detalleVenta.VentaId = venta.IdVenta;
+                detalleVenta.Venta = venta;
+
+                // Insertar el detalleVenta y guardar los cambios
+                contexto.DetallesVenta.Add(detalleVenta);
+                contexto.SaveChanges();
+
+            }
 
 
     }
