@@ -269,47 +269,71 @@ namespace Gasolinera
             var font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
             var fontSize = 8f;
 
+            // Ajustar el tamaño del PDF
+            var pageSize = new iText.Kernel.Geom.PageSize(350f, pdfDoc.GetDefaultPageSize().GetHeight());
+            pdfDoc.SetDefaultPageSize(pageSize);
+
             // Crear el contenido del documento
-            var document = new Document(pdfDoc);
+            var document = new iText.Layout.Document(pdfDoc);
 
             // Agregar el encabezado de la factura
-            document.Add(new Paragraph("Factura de Venta")
-                .SetTextAlignment(TextAlignment.CENTER)
+            document.Add(new iText.Layout.Element.Paragraph("Factura de Venta")
+                .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
                 .SetFontSize(20)
                 .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("GASOLINERA DOS")
+               .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
+               .SetFontSize(20)
+               .SetFont(font));
 
-            document.Add(new Paragraph("Fecha: " + DateTime.Now.ToShortDateString())
-                .SetTextAlignment(TextAlignment.RIGHT)
+            document.Add(new iText.Layout.Element.Paragraph("Santa Ana sur Pte. 1314 \n col. Valencia\n Tel 7842 2026")
+               .SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER)
                 .SetFont(font));
 
-            document.Add(new Paragraph(""));
+            document.Add(new iText.Layout.Element.Paragraph("Fecha: " + DateTime.Now.ToShortDateString())
+                .SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT)
+                .SetFont(font));
+
+            document.Add(new iText.Layout.Element.Paragraph("<=====================================>"));
 
             // Agregar los detalles de la venta
-            document.Add(new Paragraph("Detalle de la Venta:")
-                .SetTextAlignment(TextAlignment.LEFT)
+            document.Add(new iText.Layout.Element.Paragraph("Detalle de la Venta:")
+                .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
                 .SetFontSize(16)
                 .SetFont(font));
 
-            document.Add(new Paragraph("ID Venta: " + venta.IdVenta)
+            document.Add(new iText.Layout.Element.Paragraph("ID Venta: ............................" + venta.IdVenta)
+                .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("ID BOMBA: ............................" + detalleVenta.ID_BOMBA)
+               .SetFont(font));
+
+            document.Add(new iText.Layout.Element.Paragraph("Cliente: ............................" + venta.Cliente)
+                .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("Precio:............................ $" + detalleVenta.Precio)
+                .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("Cantidad: ............................" + detalleVenta.Cantidad)
+                .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("Subtotal: ............................$" + venta.Precio)
+                .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("IVA: ............................$" + venta.IVA)
+                .SetFont(font));
+            document.Add(new iText.Layout.Element.Paragraph("Total: ............................$" + venta.Total)
                 .SetFont(font));
 
-            document.Add(new Paragraph("Cliente: " + venta.Cliente)
-                .SetFont(font));
-            document.Add(new Paragraph("Precio: $" + detalleVenta.Precio)
-                .SetFont(font));
-            document.Add(new Paragraph("Cantidad: " + detalleVenta.Cantidad)
-                .SetFont(font));
-            document.Add(new Paragraph("Subtotal: $" + venta.Precio)
-                .SetFont(font));
-            document.Add(new Paragraph("IVA: $" + venta.IVA)
-                .SetFont(font));
-            document.Add(new Paragraph("Total: $" + venta.Total)
+            document.Add(new iText.Layout.Element.Paragraph("<=====================================>"));
+
+            document.Add(new iText.Layout.Element.Paragraph("Gracias por preferirnos :3")
+                .SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT)
+                .SetFontSize(16)
                 .SetFont(font));
 
             // Cerrar el documento
             document.Close();
-            Process.Start(rutaArchivo);
+
+            // Abrir el archivo PDF
+            System.Diagnostics.Process.Start(rutaArchivo);
         }
+
 
     }
 }
