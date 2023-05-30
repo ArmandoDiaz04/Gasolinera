@@ -17,6 +17,28 @@ namespace GasolineraDos.Administrador
         {
             this.contexto = new ContextBd();
         }
+        public void ObtenerPuntosYNombreCliente(int idCliente)
+        {
+            using (var db = new ContextBd())
+            {
+                var cliente = db.Clientes.FirstOrDefault(c => c.IdCliente == idCliente);
+                if (cliente != null)
+                {
+                    int puntos = (int)cliente.Puntos;
+                    string nombre = cliente.Nombre;
+
+                    // Realiza la lógica que necesites con los puntos y el nombre obtenidos
+                    // Puedes mostrarlos en un MessageBox, asignarlos a controles de formulario, etc.
+                    MessageBox.Show($"El cliente {nombre} tiene {puntos} puntos.");
+                }
+                else
+                {
+                    // Si no se encuentra el cliente con el ID especificado
+                    MessageBox.Show("No se encontró el cliente con el ID especificado.");
+                }
+            }
+        }
+
 
         public void CrearClientes(Clientes clientes)
         {

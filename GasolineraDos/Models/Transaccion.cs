@@ -25,5 +25,8 @@ namespace GasolineraDos.Models
         [Column("ID_VENTA")]
         public int? VentaId { get; set; }
         public virtual Venta Venta { get; set; }
+
+        [Column("fecha_venta")]
+        public DateTime FechaVenta { get; set; }
     }
 }

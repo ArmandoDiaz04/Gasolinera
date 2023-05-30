@@ -213,6 +213,7 @@ C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\bin\Debug\net6.0
 C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\bin\Debug\net6.0-windows\itext.bouncy-castle-adapter.dll
 C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmCanjearPuntos.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\bin\Debug\net6.0-windows\GasolineraDos.exe
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\bin\Debug\net6.0-windows\GasolineraDos.dll.config
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\bin\Debug\net6.0-windows\GasolineraDos.deps.json
@@ -286,6 +287,7 @@ C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasoline
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.FormsAdministrador.frmMenuAdmin.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.Form1.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmAcumularPuntos.resources
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmCanjearPuntos.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmGestionarCliente.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmVenta.resources
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmBienvenida.resources
@@ -301,4 +303,3 @@ C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasoline
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.pdb
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.genruntimeconfig.cache
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\ref\GasolineraDos.dll
-C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmCanjearPuntos.resources
