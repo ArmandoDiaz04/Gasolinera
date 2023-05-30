@@ -19,6 +19,7 @@ namespace Gasolinera
         private DetalleVenta detalleVenta;
         private double puntos;
         private int bomba;
+        private double pre;
         public frmVenta()
         {
             InitializeComponent();
@@ -104,14 +105,14 @@ namespace Gasolinera
                     if (pGaso>0)
                     {
                         double calcu = double.Parse(txtPrecio.Text);
-                        double pre = calcu * pGaso;
+                         pre = calcu * pGaso;
                         double tt = pre * 1.13;
                         puntos = tt;
                         venta = new Venta
                         {
                             IdEmpleado = idep,
-                            IdCliente = 1,
-                            Precio = pre,
+                            //IdCliente = 1,
+                            Precio = pGaso,
                             ImpuestoF = 2.0,
                             IVA = 0.13,
                             Total = tt
@@ -123,9 +124,10 @@ namespace Gasolinera
                             ID_BOMBA = bomba,
                             Cantidad = calcu,
                             Descuento = 0,
-                            Precio = tt
+                            Precio = pGaso
                         };
 
+                        ven.ReducirCantidadGasolina(bomba, (float)calcu);
                         ven.CrearVenta(venta, detalleVenta);
                         //ven.ReducirCantidadGasolina(bomba, (decimal)calcu);
                         this.GeneraFactura();
@@ -226,33 +228,34 @@ namespace Gasolinera
                     if (pGaso>0)
                     {
                         double calcu = double.Parse(txtPrecio.Text);
-                        double gal = calcu - (calcu * 0.13) / pGaso;
+                        double gal = calcu / pGaso;
+                        pre = calcu - (calcu * .13);
                         puntos = gal;
                         venta = new Venta
                         {
                             IdEmpleado = idep,
                             //IdCliente = 1,
-                            Precio = calcu,
+                            Precio = pGaso,
                             ImpuestoF = 2.0,
                             IVA = 0.13,
-                            Total = gal
+                            Total = calcu
                         };
 
                         // detalle insert 
                         detalleVenta = new DetalleVenta
                         {
                             ID_BOMBA = bomba,
-                            Cantidad = calcu,
+                            Cantidad = gal,
                             Descuento = 0,
-                            Precio = gal
+                            Precio = pGaso
                         };
-
+                        ven.ReducirCantidadGasolina(bomba, (float)gal);
                         ven.CrearVenta(venta, detalleVenta);
                         this.GeneraFactura();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo realizr la venta.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se pudo realizar la venta.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 }
@@ -356,7 +359,7 @@ namespace Gasolinera
                 .SetFont(font));
             document.Add(new iText.Layout.Element.Paragraph("Cantidad: ............................" + detalleVenta.Cantidad)
                 .SetFont(font));
-            document.Add(new iText.Layout.Element.Paragraph("Subtotal: ............................$" + venta.Precio)
+            document.Add(new iText.Layout.Element.Paragraph("Subtotal: ............................$" + pre)
                 .SetFont(font));
             document.Add(new iText.Layout.Element.Paragraph("IVA: ............................$" + venta.IVA)
                 .SetFont(font));
@@ -430,25 +433,26 @@ namespace Gasolinera
                         if (pGaso>0)
                         {
                             double calcu = double.Parse(txtPrecio.Text);
-                            double gal = calcu - (calcu * 0.13) / pGaso;
+                            double gal = calcu / pGaso;
+                                pre = calcu - (calcu * .13);
                             puntos = gal;
                             venta = new Venta
                             {
                                 IdEmpleado = idep,
                                 //IdCliente = 1,
-                                Precio = calcu,
+                                Precio = pGaso,
                                 ImpuestoF = 2.0,
                                 IVA = 0.13,
-                                Total = gal
+                                Total = calcu
                             };
 
                             // detalle insert 
                             detalleVenta = new DetalleVenta
                             {
                                 ID_BOMBA = bomba,
-                                Cantidad = calcu,
+                                Cantidad = gal,
                                 Descuento = 0,
-                                Precio = gal
+                                Precio = pGaso
                             };
 
 
@@ -470,6 +474,8 @@ namespace Gasolinera
 
                                         // Los puntos se restaron correctamente
                                         MessageBox.Show("Se han realizado el pago con puntos de manera exitosa.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                     ven.ReducirCantidadGasolina(bomba, (float)gal);
+
                                         ven.CrearVenta(venta, detalleVenta);
                                         this.GeneraFactura();
                                     }

@@ -16,7 +16,7 @@ namespace GasolineraDos.Models
         public int ID_BOMBA { get; set; }
 
         [Column("CANTIDAD_GALON")]
-        public decimal CantidadGalones { get; set; }
+        public float CantidadGalones { get; set; }
 
         [ForeignKey("Gasolina")]
         [Column("ID_GASOLINA")]
