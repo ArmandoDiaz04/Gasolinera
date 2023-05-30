@@ -301,3 +301,4 @@ C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasoline
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.pdb
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\GasolineraDos.genruntimeconfig.cache
 C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\ref\GasolineraDos.dll
+C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\obj\Debug\net6.0-windows\Gasolinera.frmCanjearPuntos.resources
