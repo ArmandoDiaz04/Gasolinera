@@ -127,6 +127,7 @@ namespace Gasolinera
                         };
 
                         ven.CrearVenta(venta, detalleVenta);
+                        //ven.ReducirCantidadGasolina(bomba, (decimal)calcu);
                         this.GeneraFactura();
                     }
                     else
@@ -514,6 +515,29 @@ namespace Gasolinera
                 MessageBox.Show("El DUI ingresado no existe en el sistema.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+            Cliente cli = new Cliente();
+
+            string dui = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el DUI:", "Obtener puntos y nombre del cliente", "");
+            int idCliente;
+
+           
+
+            if (int.TryParse(dui, out idCliente))
+            {
+                cli.ObtenerPuntosYNombreCliente(idCliente);
+            }
+            else
+            {
+                MessageBox.Show("El DUI ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
 
         }
     }

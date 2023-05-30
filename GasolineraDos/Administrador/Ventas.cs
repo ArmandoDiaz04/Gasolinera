@@ -38,6 +38,32 @@ namespace GasolineraDos.Administrador
 
             }
         }
+        public void ReducirCantidadGasolina(int idBomba, decimal cantidadAReducir)
+        {
+            using (var contexto = new ContextBd()) // Reemplaza "TuContexto" con el nombre de tu clase de contexto de Entity Framework
+            {
+                var bomba = contexto.Bombas.FirstOrDefault(b => b.ID_BOMBA == idBomba);
+
+                if (bomba != null)
+                {
+                    // Verificar si hay suficiente cantidad de gasolina en la bomba
+                    if (bomba.CantidadGalones >= cantidadAReducir)
+                    {
+                        bomba.CantidadGalones -= cantidadAReducir;
+                        contexto.SaveChanges();
+                        Console.WriteLine("Cantidad de gasolina reducida con éxito en la bomba.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay suficiente cantidad de gasolina en la bomba.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontró la bomba con el ID especificado.");
+                }
+            }
+        }
 
     }
 }
