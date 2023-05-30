@@ -44,13 +44,25 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0-preview.2.23128.3, )"
+              "version": "[8.0.0-preview.3.23174.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0-preview.2.23128.3, )"
+              "version": "[8.0.0-preview.3.23174.2, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

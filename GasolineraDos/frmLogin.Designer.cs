@@ -123,6 +123,7 @@
             this.textBox2.Size = new System.Drawing.Size(365, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.Tag = "";
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox3
             // 
@@ -170,6 +171,7 @@
             this.linkLabel1.TabIndex = 7;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Has olvidado tu contraseña?";
+            this.linkLabel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.linkLabel1_MouseClick);
             // 
             // frmLogin
             // 

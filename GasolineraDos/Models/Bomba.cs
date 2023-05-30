@@ -13,7 +13,7 @@ namespace GasolineraDos.Models
     {
         [Key]
         [Column("ID_BOMBA")]
-        public int Id { get; set; }
+        public int ID_BOMBA { get; set; }
 
         [Column("CANTIDAD_GALON")]
         public decimal CantidadGalones { get; set; }

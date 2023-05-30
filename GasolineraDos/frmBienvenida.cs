@@ -35,18 +35,23 @@ namespace Gasolinera {
         {
 
             timer1.Start();
+
+
             var screenWidth = Screen.PrimaryScreen.Bounds.Width;
             var screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            if (screenWidth < 1920 || screenHeight<1080)
+
+            if (screenWidth < 1920 || screenHeight < 1080)
+
             {
                 var scaleFactor = Math.Min((double)screenWidth / 1920, (double)screenHeight / 1080);
                 this.Size = new Size((int)(1920 * scaleFactor), (int)(1080 * scaleFactor));
 
                 this.TopMost = true; // El formulario se muestra siempre en primer plano
-                this.Font = new Font(this.Font.FontFamily, (float)(this.Font.Size * scaleFactor));
-                ///configura la posicion segun tamaño
-               
+                this.Font = new Font(this.Font.FontFamily, (float)(this.Font.Size * scaleFactor * 1.1));
+
+
             }
+            ///configura la posicion segun tamaño
             this.Location = new Point((screenWidth - this.Width) / 2, (screenHeight - this.Height) / 2);
 
         }

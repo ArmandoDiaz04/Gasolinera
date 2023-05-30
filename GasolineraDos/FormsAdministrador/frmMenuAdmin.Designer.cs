@@ -95,10 +95,10 @@
             this.PanelReportes.Controls.Add(this.button1);
             this.PanelReportes.Controls.Add(this.btnrep1);
             this.PanelReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelReportes.Location = new System.Drawing.Point(0, 630);
+            this.PanelReportes.Location = new System.Drawing.Point(0, 471);
             this.PanelReportes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelReportes.Name = "PanelReportes";
-            this.PanelReportes.Size = new System.Drawing.Size(287, 186);
+            this.PanelReportes.Size = new System.Drawing.Size(304, 94);
             this.PanelReportes.TabIndex = 7;
             // 
             // button1
@@ -113,7 +113,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(287, 46);
+            this.button1.Size = new System.Drawing.Size(304, 46);
             this.button1.TabIndex = 1;
             this.button1.Text = "r2";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,7 +131,7 @@
             this.btnrep1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnrep1.Name = "btnrep1";
             this.btnrep1.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.btnrep1.Size = new System.Drawing.Size(287, 46);
+            this.btnrep1.Size = new System.Drawing.Size(304, 46);
             this.btnrep1.TabIndex = 0;
             this.btnrep1.Text = "r1";
             this.btnrep1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,11 +144,11 @@
             this.btnGenerarReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReportes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGenerarReportes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnGenerarReportes.Location = new System.Drawing.Point(0, 583);
+            this.btnGenerarReportes.Location = new System.Drawing.Point(0, 424);
             this.btnGenerarReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarReportes.Name = "btnGenerarReportes";
             this.btnGenerarReportes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnGenerarReportes.Size = new System.Drawing.Size(287, 47);
+            this.btnGenerarReportes.Size = new System.Drawing.Size(304, 47);
             this.btnGenerarReportes.TabIndex = 6;
             this.btnGenerarReportes.Text = "Generar reportes";
             this.btnGenerarReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,10 +160,10 @@
             this.PanelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(29)))));
             this.PanelAdmin.Controls.Add(this.btnCargarBombas);
             this.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelAdmin.Location = new System.Drawing.Point(0, 507);
+            this.PanelAdmin.Location = new System.Drawing.Point(0, 364);
             this.PanelAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PanelAdmin.Name = "PanelAdmin";
-            this.PanelAdmin.Size = new System.Drawing.Size(287, 76);
+            this.PanelAdmin.Size = new System.Drawing.Size(304, 60);
             this.PanelAdmin.TabIndex = 5;
             // 
             // btnCargarBombas
@@ -178,7 +178,7 @@
             this.btnCargarBombas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCargarBombas.Name = "btnCargarBombas";
             this.btnCargarBombas.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.btnCargarBombas.Size = new System.Drawing.Size(287, 46);
+            this.btnCargarBombas.Size = new System.Drawing.Size(304, 46);
             this.btnCargarBombas.TabIndex = 0;
             this.btnCargarBombas.Text = "Cargar bombas";
             this.btnCargarBombas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -192,11 +192,11 @@
             this.btnAdminInventarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdminInventarios.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdminInventarios.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdminInventarios.Location = new System.Drawing.Point(0, 460);
+            this.btnAdminInventarios.Location = new System.Drawing.Point(0, 317);
             this.btnAdminInventarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdminInventarios.Name = "btnAdminInventarios";
             this.btnAdminInventarios.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnAdminInventarios.Size = new System.Drawing.Size(287, 47);
+            this.btnAdminInventarios.Size = new System.Drawing.Size(304, 47);
             this.btnAdminInventarios.TabIndex = 4;
             this.btnAdminInventarios.Text = "Administracion de Inventarios";
             this.btnAdminInventarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,7 +211,7 @@
             this.panelGesionEmpleado.Location = new System.Drawing.Point(0, 252);
             this.panelGesionEmpleado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelGesionEmpleado.Name = "panelGesionEmpleado";
-            this.panelGesionEmpleado.Size = new System.Drawing.Size(287, 208);
+            this.panelGesionEmpleado.Size = new System.Drawing.Size(304, 65);
             this.panelGesionEmpleado.TabIndex = 3;
             // 
             // btnAñadirEmpleado
@@ -226,7 +226,7 @@
             this.btnAñadirEmpleado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAñadirEmpleado.Name = "btnAñadirEmpleado";
             this.btnAñadirEmpleado.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
-            this.btnAñadirEmpleado.Size = new System.Drawing.Size(287, 46);
+            this.btnAñadirEmpleado.Size = new System.Drawing.Size(304, 46);
             this.btnAñadirEmpleado.TabIndex = 3;
             this.btnAñadirEmpleado.Text = "Añadir Empleado";
             this.btnAñadirEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -244,7 +244,7 @@
             this.btnGestionarEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionarEmpleados.Name = "btnGestionarEmpleados";
             this.btnGestionarEmpleados.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnGestionarEmpleados.Size = new System.Drawing.Size(287, 47);
+            this.btnGestionarEmpleados.Size = new System.Drawing.Size(304, 47);
             this.btnGestionarEmpleados.TabIndex = 2;
             this.btnGestionarEmpleados.Text = "Gestionar Empleados";
             this.btnGestionarEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,7 +258,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(287, 205);
+            this.panelLogo.Size = new System.Drawing.Size(304, 205);
             this.panelLogo.TabIndex = 1;
             // 
             // pictureBox1
@@ -312,5 +312,11 @@
         private System.Windows.Forms.Button btnGestionarEmpleados;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnGestionar;
+        private System.Windows.Forms.Panel PanelFrecuente;
+        private System.Windows.Forms.Button btnCanjear;
+        private System.Windows.Forms.Button btnAcumular;
+        private System.Windows.Forms.Button btnFrecuentes;
     }
 }

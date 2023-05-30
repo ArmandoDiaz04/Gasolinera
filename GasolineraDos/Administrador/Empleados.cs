@@ -111,9 +111,9 @@ namespace GasolineraDos.Administrador
             string iv = "000102030405060708090a0b0c0d0e0f";
 
             byte[] ivBytes = Enumerable.Range(0, iv.Length)
-                           .Where(x => x % 2 == 0)
-                           .Select(x => Convert.ToByte(iv.Substring(x, 2), 16))
-                           .ToArray();
+                .Where(x => x % 2 == 0)
+                .Select(x => Convert.ToByte(iv.Substring(x, 2), 16))
+                .ToArray();
 
 
             using (Aes aesAlg = Aes.Create())
@@ -129,16 +129,16 @@ namespace GasolineraDos.Administrador
                 {
                     using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
                     {
-                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
-                        {
-                            textoDesencriptado = srDecrypt.ReadToEnd();
-                        }
+                        byte[] decryptedBytes = new byte[textoCifrado.Length];
+                        int byteCount = csDecrypt.Read(decryptedBytes, 0, decryptedBytes.Length);
+                        textoDesencriptado = Encoding.UTF8.GetString(decryptedBytes, 0, byteCount);
                     }
                 }
             }
 
             return textoDesencriptado;
         }
+
         public void EditarEmpleado(int id, string nuevoNombre, string nuevoCargo, byte[] contraseniaCifrada,string telefono,string dui)
         {
             using (var context = new ContextBd())

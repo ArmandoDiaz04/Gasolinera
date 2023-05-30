@@ -103,7 +103,6 @@ namespace Gasolinera.FormsAdministrador
                 if (empleado != null)
                 {
                     string contrasenia = Empleados.Desencriptar(empleado.Contrasenia);
-                    MessageBox.Show(contrasenia);
                     this.button2.Enabled = true;
                     this.button3.Enabled = true;
                     this.button1.Enabled = false;
@@ -242,6 +241,11 @@ namespace Gasolinera.FormsAdministrador
 
 
             }
+        }
+
+        private void cmboxCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
