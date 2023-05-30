@@ -18,6 +18,7 @@ namespace Gasolinera
         private Venta venta;
         private DetalleVenta detalleVenta;
         private double puntos;
+        private int bomba;
         public frmVenta()
         {
             InitializeComponent();
@@ -46,63 +47,93 @@ namespace Gasolinera
 
         }
 
+        private double precioGasolina()
+        {
+            bomba = 0;
+        
+            if (this.comboBox1.Text.Trim() == "SUPER")
+            {
+                bomba = 1;
+            }
+            else if (this.comboBox1.Text.Trim() == "REGULAR")
+            {
+                bomba = 2;
+            }
+            else if (this.comboBox1.Text.Trim() == "DIESEL")
+            {
+                bomba = 3;
+            }
+            else if (this.comboBox1.Text.Trim() == "---Seleccione una opción--")
+            {
+                MessageBox.Show("Seleccione un tipo de gasolina");
+            }
+
+            using (var context = new ContextBd())
+            {
+                // ID de la bomba que deseas consultar
+
+                var precio = context.Bombas
+                    .Where(b => b.ID_BOMBA == bomba)
+                    .Select(b => b.Precio)
+                    .FirstOrDefault();
+
+                if (precio != null)
+                {
+                    return (double)precio;
+                }
+                else
+                {
+                    // No se encontró el precio para la bomba especificada
+                    MessageBox.Show("No se encontró el precio para la bomba especificada.");
+                    return 0;
+                }
+            }
+        }
         private void button11_Click(object sender, EventArgs e)
         {
             try
             {
-                int bomba = 0;
-                double pGaso = 0;
-
-                if (this.comboBox1.Text.Trim() == "SUPER")
-                {
-                    bomba = 1;
-                    pGaso = 4.42;
-                }
-                else if (this.comboBox1.Text.Trim() == "REGULAR")
-                {
-                    bomba = 2; pGaso = 4.13;
-                }
-                else if (this.comboBox1.Text.Trim() == "DIESEL")
-                {
-                    bomba = 3;
-                    pGaso = 3.65;
-                }
-                else if (this.comboBox1.Text.Trim() == "---Seleccione una opción--")
-                {
-                    MessageBox.Show("Seleccione un tipo de gasolina");
-                    return;
-                }
+               
 
                 string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
                 int idep = int.Parse(emple);
+                double pGaso = this.precioGasolina();
 
                 if (int.TryParse(emple, out idep))
                 {
-                    double calcu = double.Parse(txtPrecio.Text);
-                    double pre = calcu * pGaso;
-                    double tt = pre * 1.13;
-                    puntos = tt;
-                    venta = new Venta
+                    if (pGaso>0)
                     {
-                        IdEmpleado = idep,
-                        IdCliente = 1,
-                        Precio = pre,
-                        ImpuestoF = 2.0,
-                        IVA = 0.13,
-                        Total = tt
-                    };
+                        double calcu = double.Parse(txtPrecio.Text);
+                        double pre = calcu * pGaso;
+                        double tt = pre * 1.13;
+                        puntos = tt;
+                        venta = new Venta
+                        {
+                            IdEmpleado = idep,
+                            IdCliente = 1,
+                            Precio = pre,
+                            ImpuestoF = 2.0,
+                            IVA = 0.13,
+                            Total = tt
+                        };
 
-                    // detalle insert 
-                    detalleVenta = new DetalleVenta
+                        // detalle insert 
+                        detalleVenta = new DetalleVenta
+                        {
+                            ID_BOMBA = bomba,
+                            Cantidad = calcu,
+                            Descuento = 0,
+                            Precio = tt
+                        };
+
+                        ven.CrearVenta(venta, detalleVenta);
+                        this.GeneraFactura();
+                    }
+                    else
                     {
-                        ID_BOMBA = bomba,
-                        Cantidad = calcu,
-                        Descuento = 0,
-                        Precio = tt
-                    };
+                        MessageBox.Show("No se pudo realizr la venta.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    ven.CrearVenta(venta, detalleVenta);
-                    this.GeneraFactura();
+                    }
                 }
                 else
                 {
@@ -183,59 +214,46 @@ namespace Gasolinera
         {
             try
             {
-                int bomba = 0;
-                double pGaso = 0;
 
-                if (this.comboBox1.Text.Trim() == "SUPER")
-                {
-                    bomba = 1;
-                    pGaso = 4.42;
-                }
-                else if (this.comboBox1.Text.Trim() == "REGULAR")
-                {
-                    bomba = 2; pGaso = 4.13;
-                }
-                else if (this.comboBox1.Text.Trim() == "DIESEL")
-                {
-                    bomba = 3;
-                    pGaso = 3.65;
-                }
-                else if (this.comboBox1.Text.Trim() == "---Seleccione una opción--")
-                {
-                    MessageBox.Show("Seleccione un tipo de gasolina");
-                    return;
-                }
-               
 
                 string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
                 int idep = int.Parse(emple);
+                double pGaso = this.precioGasolina();
 
                 if (int.TryParse(emple, out idep))
                 {
-                    double calcu = double.Parse(txtPrecio.Text);
-                    double gal = calcu - (calcu * 0.13) / pGaso;
-                    puntos = gal;
-                    venta = new Venta
+                    if (pGaso>0)
                     {
-                        IdEmpleado = idep,
-                        //IdCliente = 1,
-                        Precio = calcu,
-                        ImpuestoF = 2.0,
-                        IVA = 0.13,
-                        Total = gal
-                    };
+                        double calcu = double.Parse(txtPrecio.Text);
+                        double gal = calcu - (calcu * 0.13) / pGaso;
+                        puntos = gal;
+                        venta = new Venta
+                        {
+                            IdEmpleado = idep,
+                            //IdCliente = 1,
+                            Precio = calcu,
+                            ImpuestoF = 2.0,
+                            IVA = 0.13,
+                            Total = gal
+                        };
 
-                    // detalle insert 
-                    detalleVenta = new DetalleVenta
+                        // detalle insert 
+                        detalleVenta = new DetalleVenta
+                        {
+                            ID_BOMBA = bomba,
+                            Cantidad = calcu,
+                            Descuento = 0,
+                            Precio = gal
+                        };
+
+                        ven.CrearVenta(venta, detalleVenta);
+                        this.GeneraFactura();
+                    }
+                    else
                     {
-                        ID_BOMBA = bomba,
-                        Cantidad = calcu,
-                        Descuento = 0,
-                        Precio = gal
-                    };
+                        MessageBox.Show("No se pudo realizr la venta.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    ven.CrearVenta(venta, detalleVenta);
-                    this.GeneraFactura();
+                    }
                 }
                 else
                 {
@@ -400,88 +418,87 @@ namespace Gasolinera
             {
                 try
                 {
-                    int bomba = 0;
-                    double pGaso = 0;
-
-                    if (this.comboBox1.Text.Trim() == "SUPER")
-                    {
-                        bomba = 1;
-                        pGaso = 4.42;
-                    }
-                    else if (this.comboBox1.Text.Trim() == "REGULAR")
-                    {
-                        bomba = 2; pGaso = 4.13;
-                    }
-                    else if (this.comboBox1.Text.Trim() == "DIESEL")
-                    {
-                        bomba = 3;
-                        pGaso = 3.65;
-                    }
-                    else if (this.comboBox1.Text.Trim() == "---Seleccione una opción--")
-                    {
-                        MessageBox.Show("Seleccione un tipo de gasolina");
-                        return;
-                    }
+                 
 
                     string emple = Microsoft.VisualBasic.Interaction.InputBox("Ingrese id de empleado:", "Mensaje");
                     int idep = int.Parse(emple);
-
-                    double calcu = double.Parse(txtPrecio.Text);
-                    double gal = calcu - (calcu * 0.13) / pGaso;
-                    puntos = gal;
-                    venta = new Venta
+                    if (int.TryParse(idClienteInput, out idCliente))
                     {
-                        IdEmpleado = idep,
-                        //IdCliente = 1,
-                        Precio = calcu,
-                        ImpuestoF = 2.0,
-                        IVA = 0.13,
-                        Total = gal
-                    };
+                        double pGaso = this.precioGasolina();
 
-                    // detalle insert 
-                    detalleVenta = new DetalleVenta
-                    {
-                        ID_BOMBA = bomba,
-                        Cantidad = calcu,
-                        Descuento = 0,
-                        Precio = gal
-                    };
-
-
-                    using (var context = new ContextBd())
-                    {
-                        var cliente = context.Clientes.FirstOrDefault(c => c.IdCliente == Convert.ToInt32(idCliente));
-
-                        if (cliente != null)
+                        if (pGaso>0)
                         {
-                            if (cliente.Puntos >= venta.Precio)
+                            double calcu = double.Parse(txtPrecio.Text);
+                            double gal = calcu - (calcu * 0.13) / pGaso;
+                            puntos = gal;
+                            venta = new Venta
                             {
-                                // Utilizar una nueva variable 'puntosARestar'
-                                int puntosARestar = Convert.ToInt32(venta.Precio);
+                                IdEmpleado = idep,
+                                //IdCliente = 1,
+                                Precio = calcu,
+                                ImpuestoF = 2.0,
+                                IVA = 0.13,
+                                Total = gal
+                            };
 
-                                var puntosParam = new SqlParameter("@puntos_restar", puntosARestar);
-                                var idClienteParam = new SqlParameter("@id_cliente", idCliente);
-
-                                context.Database.ExecuteSqlRaw("EXEC RestarPuntos @id_cliente, @puntos_restar", idClienteParam, puntosParam);
-
-                                // Los puntos se restaron correctamente
-                                MessageBox.Show("Se han realizado el pago con puntos de manera exitosa.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ven.CrearVenta(venta, detalleVenta);
-                                this.GeneraFactura();
-                            }
-                            else
+                            // detalle insert 
+                            detalleVenta = new DetalleVenta
                             {
-                                // Puntos insuficientes
-                                MessageBox.Show("Puntos insuficientes para realizar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ID_BOMBA = bomba,
+                                Cantidad = calcu,
+                                Descuento = 0,
+                                Precio = gal
+                            };
+
+
+                            using (var context = new ContextBd())
+                            {
+                                var cliente = context.Clientes.FirstOrDefault(c => c.IdCliente == Convert.ToInt32(idCliente));
+
+                                if (cliente != null)
+                                {
+                                    if (cliente.Puntos >= venta.Precio)
+                                    {
+                                        // Utilizar una nueva variable 'puntosARestar'
+                                        int puntosARestar = Convert.ToInt32(venta.Precio);
+
+                                        var puntosParam = new SqlParameter("@puntos_restar", puntosARestar);
+                                        var idClienteParam = new SqlParameter("@id_cliente", idCliente);
+
+                                        context.Database.ExecuteSqlRaw("EXEC RestarPuntos @id_cliente, @puntos_restar", idClienteParam, puntosParam);
+
+                                        // Los puntos se restaron correctamente
+                                        MessageBox.Show("Se han realizado el pago con puntos de manera exitosa.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        ven.CrearVenta(venta, detalleVenta);
+                                        this.GeneraFactura();
+                                    }
+                                    else
+                                    {
+                                        // Puntos insuficientes
+                                        MessageBox.Show("Puntos insuficientes para realizar el pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    // Cliente no encontrado
+                                    MessageBox.Show("No existe el cliente consultado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                         else
                         {
-                            // Cliente no encontrado
-                            MessageBox.Show("No existe el cliente consultado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No se pudo realizr la venta.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
+
                     }
+                    else
+                    {
+                        // El valor ingresado no es un número entero válido
+                        // Muestra un mensaje de error
+                        MessageBox.Show("El identificador de empleado no es válido.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -494,7 +511,7 @@ namespace Gasolinera
             {
                 // El valor ingresado no es un número entero válido
                 // Muestra un mensaje de error
-                MessageBox.Show("El valor ingresado no es un número entero válido.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DUI ingresado no existe en el sistema.", "Error de Entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
           
 
