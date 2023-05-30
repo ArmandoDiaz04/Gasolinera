@@ -27,6 +27,9 @@ namespace GasolineraDos.Models
         [Column("ID_PROVEEDOR")]
         public int ProveedorId { get; set; }
         public virtual Proveedor Proveedor { get; set; }
+
+        [Column("PRECIO")]
+        public float? Precio { get; set; }
     }
 
 }

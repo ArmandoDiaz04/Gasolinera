@@ -25,7 +25,6 @@
         private void InitializeComponent() {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtGalones = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblGalones = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -42,7 +41,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.buttongalon = new System.Windows.Forms.Button();
             this.buttonDollar = new System.Windows.Forms.Button();
-            this.btnPDF = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1478, 811);
+            this.dataGridView1.Size = new System.Drawing.Size(1386, 788);
             this.dataGridView1.TabIndex = 2;
             // 
             // txtPrecio
@@ -66,14 +66,6 @@
             this.txtPrecio.TabIndex = 1;
             this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
-            // 
-            // txtGalones
-            // 
-            this.txtGalones.Location = new System.Drawing.Point(876, 51);
-            this.txtGalones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtGalones.Name = "txtGalones";
-            this.txtGalones.Size = new System.Drawing.Size(345, 23);
-            this.txtGalones.TabIndex = 2;
             // 
             // lblPrecio
             // 
@@ -105,6 +97,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(264, 51);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -245,22 +238,33 @@
             this.buttonDollar.UseVisualStyleBackColor = true;
             this.buttonDollar.Click += new System.EventHandler(this.buttonDollar_Click);
             // 
-            // btnPDF
+            // button11
             // 
-            this.btnPDF.Location = new System.Drawing.Point(73, 460);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(169, 23);
-            this.btnPDF.TabIndex = 31;
-            this.btnPDF.Text = "CrearFactura";
-            this.btnPDF.UseVisualStyleBackColor = true;
-            this.btnPDF.Click += new System.EventHandler(this.button11_Click_1);
+            this.button11.Location = new System.Drawing.Point(674, 405);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(169, 23);
+            this.button11.TabIndex = 32;
+            this.button11.Text = "Acumular Puntos";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click_2);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(521, 460);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(169, 23);
+            this.button12.TabIndex = 33;
+            this.button12.Text = "Pagar con puntos";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1478, 811);
-            this.Controls.Add(this.btnPDF);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.buttonDollar);
             this.Controls.Add(this.buttongalon);
             this.Controls.Add(this.button10);
@@ -277,7 +281,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblGalones);
             this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.txtGalones);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -300,7 +303,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private TextBox txtPrecio;
-        private TextBox txtGalones;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -313,6 +315,7 @@
         private Button button10;
         private Button buttongalon;
         private Button buttonDollar;
-        private Button btnPDF;
+        private Button button11;
+        private Button button12;
     }
 }
