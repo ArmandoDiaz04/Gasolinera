@@ -20,8 +20,8 @@ namespace GasolineraDos.Conexion
         {
             var builder = new DbContextOptionsBuilder<ContextBd>();
 
-            builder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
-      
+            builder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Juan\Documents\Mis archivos\Metodologias_Agiles\Proyecto final\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
+           // builder.UseSqlServer(@"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\raulv\OneDrive\Escritorio\git\Gasolinera\GasolineraDos\data\gasolinera.mdf;Integrated Security=True;");
             return builder.Options;
         }
         public DbSet<Clientes> Clientes { get; set; }
@@ -30,7 +30,7 @@ namespace GasolineraDos.Conexion
         public DbSet<Gasolina> Gasolinas { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
         public DbSet<Bomba> Bombas { get; set; }
-        public DbSet<DetalleVenta> DetallesVentas { get; set; }
+        public DbSet<DetalleVenta> DetallesVenta { get; set; }
         public DbSet<Transaccion> Transacciones { get; set; }
 
     }

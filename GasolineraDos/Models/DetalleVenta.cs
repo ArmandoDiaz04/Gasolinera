@@ -16,7 +16,7 @@ namespace GasolineraDos.Models
         public int Id { get; set; }
         [ForeignKey("Bomba")]
         [Column("ID_BOMBA")]
-        public int BombaId { get; set; }
+        public int ID_BOMBA { get; set; }
         public virtual Bomba? Bomba { get; set; }
 
         [ForeignKey("Venta")]
@@ -25,13 +25,13 @@ namespace GasolineraDos.Models
         public virtual Venta? Venta { get; set; }
 
         [Column("CANTIDAD")]
-        public decimal Cantidad { get; set; }
+        public double Cantidad { get; set; }
 
         [Column("DESCUENTO")]
-        public decimal Descuento { get; set; }
+        public double Descuento { get; set; }
 
         [Column("PRECIO")]
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
     }
 }
